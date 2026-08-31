@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Customizer | Alex Morgan</title>
+
+  <!-- ============================================================
+       HOW THIS PAGE WORKS (for non-technical users)
+       ============================================================
+
+       This page lets you VISUALLY change the look of your portfolio
+       without editing code. Just use the controls on the left panel.
+
+       When you're happy with your choices:
+       1. Click "Export Theme" to download a CSS file
+       2. Replace the contents of "portfolio/css/base.css" with it
+       3. Your portfolio now uses your new theme!
+
+       WHAT EACH SECTION DOES:
+       ┌─────────────────────┬──────────────────────────────────────┐
+       │ Section             │ What it controls                     │
+       ├─────────────────────┼──────────────────────────────────────┤
+       │ Primary Color       │ Main brand color (buttons, links)    │
+       │ Accent Color        │ Secondary highlight color            │
+       │ Dark Color          │ Dark background sections             │
+       │ Background Color    │ Page background                      │
+       │ Text Color          │ Main body text color                 │
+       │ Heading Font        │ Font used for headings (h1, h2, etc)│
+       │ Body Font           │ Font used for paragraphs & UI       │
+       │ Font Size           │ Base text size (everything scales)   │
+       │ Border Radius       │ How rounded corners are              │
+       │ Dark Mode           │ Switch between light & dark themes   │
+       └─────────────────────┴──────────────────────────────────────┘
+       ============================================================ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    /* ============================================================
+       THEME EDITOR LAYOUT
+       ============================================================
+       This section styles the theme editor panel itself.
+       You don't need to edit this — just use the controls! */
+
+    body {
+      background: var(--gray-100);
+    }
+
+    .editor-wrapper {
+      display: flex;
+      min-height: 100vh;
+      padding-top: 70px; /* Space for navbar */
+    }
+
+    /* LEFT PANEL — Controls */
+    .editor-panel {
+      width: 380px;
+      min-width: 380px;
+      background: var(--white);
+      border-right: 1px solid var(--gray-200);
+      padding: 2rem;
+      overflow-y: auto;
+      height: calc(100vh - 70px);
+      position: sticky;
+      top: 70px;
+    }
+
+    .editor-panel h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .editor-panel .subtitle {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin-bottom: 1.5rem;
+    }
+
+    .editor-section {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .editor-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .editor-section h5 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-500);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .color-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .color-row label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      min-width: 120px;
+      margin-bottom: 0;
+    }
+
+    .color-row input[type="color"] {
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      padding: 2px;
+      background: var(--white);
+    }
+
+    .color-row input[type="color"]:hover {
+      border-color: var(--primary);
+    }
+
+    .color-row .color-hex {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      min-width: 75px;
+    }
+
+    .editor-section select,
+    .editor-section input[type="range"] {
+      width: 100%;
+    }
+
+    .editor-section select {
+      padding: 0.6rem 1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-family: inherit;
+      background: var(--white);
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .editor-section select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      height: 6px;
+      background: var(--gray-200);
+      border-radius: 10px;
+      outline: none;
+      margin-top: 0.5rem;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      border: 3px solid var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      margin-top: 0.25rem;
+    }
+
+    .range-value {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* RIGHT PANEL — Live Preview */
+    .editor-preview {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    .preview-frame {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .preview-header {
+      background: var(--gray-50);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .preview-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .preview-dot.red { background: #ff5f57; }
+    .preview-dot.yellow { background: #febc2e; }
+    .preview-dot.green { background: #28c840; }
+
+    .preview-url {
+      flex: 1;
+      background: var(--white);
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      border: 1px solid var(--gray-200);
+      margin-left: 0.5rem;
+    }
+
+    .preview-body {
+      padding: 2rem;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-top: 1px solid var(--gray-200);
+      padding: 1rem 2rem;
+      display: flex;
+      gap: 0.75rem;
+      z-index: 100;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+    }
+
+    .action-buttons .btn {
+      flex: 1;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      background: var(--gray-50);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+    }
+
+    .theme-toggle-wrapper label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    .toggle-switch {
+      width: 48px;
+      height: 26px;
+      background: var(--gray-300);
+      border-radius: 13px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle-switch.active {
+      background: var(--primary);
+    }
+
+    .toggle-switch::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: var(--white);
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      transition: transform 0.3s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .toggle-switch.active::after {
+      transform: translateX(22px);
+    }
+
+    /* Quick Presets */
+    .preset-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .preset-grid-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .preset-btn {
+      padding: 0.5rem;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      cursor: pointer;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .preset-btn:hover {
+      border-color: var(--primary);
+      background: rgba(37, 99, 235, 0.05);
+    }
+
+    .preset-btn.active {
+      border-color: var(--primary);
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+    }
+
+    .preset-colors {
+      display: flex;
+      gap: 3px;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    .preset-swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    /* Preview Sections */
+    .preview-section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-md);
+    }
+
+    .preview-section h6 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-400);
+      margin-bottom: 1rem;
+    }
+
+    /* Toast */
+    .toast-message {
+      position: fixed;
+      bottom: 80px;
+      right: 30px;
+      background: var(--gray-900);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s;
+      pointer-events: none;
+    }
+
+    .toast-message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 3-col grid on smaller screens */
+    @media (max-width: 600px) {
+      .preset-grid-3 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .preset-grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 992px) {
+      .editor-wrapper {
+        flex-direction: column;
+      }
+
+      .editor-panel {
+        width: 100%;
+        min-width: auto;
+        height: auto;
+        position: relative;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--gray-200);
+      }
+
+      .editor-preview {
+        padding: 1rem;
+        padding-bottom: 80px;
+      }
+
+      .action-buttons {
+        position: fixed;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav" style="background:var(--gray-900);">
+    <div class="container">
+      <a class="navbar-brand-custom" href="../index.html"><span class="brand-dot"></span> Alex Morgan</a>
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span></span><span></span><span></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link-custom" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="achievements.html">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="training.html">Training</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link-custom active" href="theme.html">Theme</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Theme Editor Layout -->
+  <div class="editor-wrapper">
+
+    <!-- ============================================================
+         LEFT PANEL — Theme Controls
+         ============================================================
+         This is where all the customization controls live.
+         Each section has a clear label explaining what it does. -->
+
+    <div class="editor-panel">
+
+      <h2><i class="fas fa-palette me-2" style="color:var(--primary);"></i>Theme Customizer</h2>
+      <p class="subtitle">Change colors, fonts, and styles. The preview on the right updates live.</p>
+
+      <!-- ==================== QUICK PRESETS ====================
+           Click a preset to apply a complete color scheme instantly.
+           These are pre-configured combinations that work well together.
+           To add a new preset: add a button below AND add its colors
+           to the 'presets' object in the JavaScript at the bottom. -->
+      <div class="editor-section">
+        <h5><i class="fas fa-wand-magic-sparkles me-2"></i>Quick Presets</h5>
+        <div class="preset-grid preset-grid-3">
+
+          <!-- === PROFESSIONAL === -->
+          <button class="preset-btn active" data-preset="default" onclick="applyPreset('default')">
+            Default Blue
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#2563eb;"></span>
+              <span class="preset-swatch" style="background:#06b6d4;"></span>
+              <span class="preset-swatch" style="background:#0f172a;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="corporate" onclick="applyPreset('corporate')">
+            Corporate
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#1e40af;"></span>
+              <span class="preset-swatch" style="background:#3b82f6;"></span>
+              <span class="preset-swatch" style="background:#111827;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="slate" onclick="applyPreset('slate')">
+            Slate
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#475569;"></span>
+              <span class="preset-swatch" style="background:#94a3b8;"></span>
+              <span class="preset-swatch" style="background:#0f172a;"></span>
+            </div>
+          </button>
+
+          <!-- === BOLD === -->
+          <button class="preset-btn" data-preset="emerald" onclick="applyPreset('emerald')">
+            Emerald
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#059669;"></span>
+              <span class="preset-swatch" style="background:#10b981;"></span>
+              <span class="preset-swatch" style="background:#064e3b;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="violet" onclick="applyPreset('violet')">
+            Violet
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#7c3aed;"></span>
+              <span class="preset-swatch" style="background:#a78bfa;"></span>
+              <span class="preset-swatch" style="background:#1e1b4b;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="rose" onclick="applyPreset('rose')">
+            Rose
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#e11d48;"></span>
+              <span class="preset-swatch" style="background:#fb7185;"></span>
+              <span class="preset-swatch" style="background:#1c1917;"></span>
+            </div>
+          </button>
+
+          <!-- === WARM === -->
+          <button class="preset-btn" data-preset="amber" onclick="applyPreset('amber')">
+            Amber
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#d97706;"></span>
+              <span class="preset-swatch" style="background:#fbbf24;"></span>
+              <span class="preset-swatch" style="background:#1c1917;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="coral" onclick="applyPreset('coral')">
+            Coral
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#ea580c;"></span>
+              <span class="preset-swatch" style="background:#fb923c;"></span>
+              <span class="preset-swatch" style="background:#1c1917;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="sunset" onclick="applyPreset('sunset')">
+            Sunset
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#dc2626;"></span>
+              <span class="preset-swatch" style="background:#f59e0b;"></span>
+              <span class="preset-swatch" style="background:#1c1917;"></span>
+            </div>
+          </button>
+
+          <!-- === COOL === -->
+          <button class="preset-btn" data-preset="ocean" onclick="applyPreset('ocean')">
+            Ocean
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#0891b2;"></span>
+              <span class="preset-swatch" style="background:#06b6d4;"></span>
+              <span class="preset-swatch" style="background:#0c4a6e;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="teal" onclick="applyPreset('teal')">
+            Teal
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#0d9488;"></span>
+              <span class="preset-swatch" style="background:#2dd4bf;"></span>
+              <span class="preset-swatch" style="background:#042f2e;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="arctic" onclick="applyPreset('arctic')">
+            Arctic
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#0284c7;"></span>
+              <span class="preset-swatch" style="background:#7dd3fc;"></span>
+              <span class="preset-swatch" style="background:#0c4a6e;"></span>
+            </div>
+          </button>
+
+          <!-- === CREATIVE === -->
+          <button class="preset-btn" data-preset="magenta" onclick="applyPreset('magenta')">
+            Magenta
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#c026d3;"></span>
+              <span class="preset-swatch" style="background:#e879f9;"></span>
+              <span class="preset-swatch" style="background:#1a0a2e;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="indigo" onclick="applyPreset('indigo')">
+            Indigo
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#4f46e5;"></span>
+              <span class="preset-swatch" style="background:#818cf8;"></span>
+              <span class="preset-swatch" style="background:#1e1b4b;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="forest" onclick="applyPreset('forest')">
+            Forest
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#15803d;"></span>
+              <span class="preset-swatch" style="background:#4ade80;"></span>
+              <span class="preset-swatch" style="background:#052e16;"></span>
+            </div>
+          </button>
+
+          <!-- === DARK PRO === -->
+          <button class="preset-btn" data-preset="midnight" onclick="applyPreset('midnight')">
+            Midnight
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#6366f1;"></span>
+              <span class="preset-swatch" style="background:#a5b4fc;"></span>
+              <span class="preset-swatch" style="background:#020617;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="charcoal" onclick="applyPreset('charcoal')">
+            Charcoal
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#f59e0b;"></span>
+              <span class="preset-swatch" style="background:#fcd34d;"></span>
+              <span class="preset-swatch" style="background:#18181b;"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-preset="neon" onclick="applyPreset('neon')">
+            Neon
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#22d3ee;"></span>
+              <span class="preset-swatch" style="background:#a3e635;"></span>
+              <span class="preset-swatch" style="background:#0a0a0a;"></span>
+            </div>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- ==================== GRADIENT OPTIONS ====================
+           Choose how the main gradient looks on buttons, highlights,
+           and hero sections. Each option changes the angle/direction
+           or style of the gradient. -->
+      <div class="editor-section">
+        <h5><i class="fas fa-layer-group me-2"></i>Gradient Style</h5>
+        <div class="preset-grid preset-grid-3">
+          <button class="preset-btn active" data-gradient="135deg" onclick="updateGradient('135deg')">
+            Diagonal ↘
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:linear-gradient(135deg,#2563eb,#06b6d4);"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-gradient="90deg" onclick="updateGradient('90deg')">
+            Horizontal →
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:linear-gradient(90deg,#2563eb,#06b6d4);"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-gradient="180deg" onclick="updateGradient('180deg')">
+            Vertical ↓
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:linear-gradient(180deg,#2563eb,#06b6d4);"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-gradient="45deg" onclick="updateGradient('45deg')">
+            Diagonal ↗
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:linear-gradient(45deg,#2563eb,#06b6d4);"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-gradient="radial" onclick="updateGradient('radial')">
+            Radial ◎
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:radial-gradient(circle,#2563eb,#06b6d4);"></span>
+            </div>
+          </button>
+          <button class="preset-btn" data-gradient="none" onclick="updateGradient('none')">
+            Solid ■
+            <div class="preset-colors">
+              <span class="preset-swatch" style="background:#2563eb;"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== DARK MODE TOGGLE ====================
+           Switch between light and dark themes.
+           Dark mode makes the background dark and text light. -->
+      <div class="editor-section">
+        <h5><i class="fas fa-circle-half-stroke me-2"></i>Appearance</h5>
+        <div class="theme-toggle-wrapper">
+          <label>Dark Mode</label>
+          <div class="toggle-switch" id="darkModeToggle" onclick="toggleDarkMode()"></div>
+        </div>
+      </div>
+
+      <!-- ==================== COLORS ====================
+           These control the main colors used across the site.
+           Click the colored circle to open a color picker.
+           The hex code (like #2563eb) updates automatically. -->
+
+      <div class="editor-section">
+        <h5><i class="fas fa-droplet me-2"></i>Colors</h5>
+
+        <!-- Primary Color: Used for buttons, links, and highlights -->
+        <div class="color-row">
+          <label>Primary</label>
+          <input type="color" id="colorPrimary" value="#2563eb" onchange="updateColor('primary', this.value)">
+          <span class="color-hex" id="hexPrimary">#2563eb</span>
+        </div>
+
+        <!-- Accent Color: Used for secondary highlights and gradients -->
+        <div class="color-row">
+          <label>Accent</label>
+          <input type="color" id="colorAccent" value="#06b6d4" onchange="updateColor('accent', this.value)">
+          <span class="color-hex" id="hexAccent">#06b6d4</span>
+        </div>
+
+        <!-- Dark Color: Background of dark sections and navbar -->
+        <div class="color-row">
+          <label>Dark</label>
+          <input type="color" id="colorDark" value="#0f172a" onchange="updateColor('dark', this.value)">
+          <span class="color-hex" id="hexDark">#0f172a</span>
+        </div>
+
+        <!-- Background Color: Main page background -->
+        <div class="color-row">
+          <label>Background</label>
+          <input type="color" id="colorBg" value="#ffffff" onchange="updateColor('bg', this.value)">
+          <span class="color-hex" id="hexBg">#ffffff</span>
+        </div>
+
+        <!-- Text Color: Main paragraph text color -->
+        <div class="color-row">
+          <label>Text</label>
+          <input type="color" id="colorText" value="#475569" onchange="updateColor('text', this.value)">
+          <span class="color-hex" id="hexText">#475569</span>
+        </div>
+      </div>
+
+      <!-- ==================== TYPOGRAPHY ====================
+           Change the fonts used across the site.
+           "Heading Font" applies to titles (h1, h2, h3).
+           "Body Font" applies to paragraphs and buttons.
+           The font size slider scales everything proportionally. -->
+
+      <div class="editor-section">
+        <h5><i class="fas fa-font me-2"></i>Typography</h5>
+
+        <!-- Heading Font: Font for h1, h2, h3, etc. -->
+        <div class="mb-3">
+          <label style="font-size:0.85rem;font-weight:500;">Heading Font</label>
+          <select id="fontHeading" onchange="updateFont('heading', this.value)">
+            <option value="'Space Grotesk', sans-serif" selected>Space Grotesk (Default)</option>
+            <option value="'Poppins', sans-serif">Poppins</option>
+            <option value="'Montserrat', sans-serif">Montserrat</option>
+            <option value="'Raleway', sans-serif">Raleway</option>
+            <option value="'Playfair Display', serif">Playfair Display</option>
+            <option value="'Roboto', sans-serif">Roboto</option>
+            <option value="'Inter', sans-serif">Inter</option>
+            <option value="Georgia, serif">Georgia</option>
+          </select>
+        </div>
+
+        <!-- Body Font: Font for all other text -->
+        <div class="mb-3">
+          <label style="font-size:0.85rem;font-weight:500;">Body Font</label>
+          <select id="fontBody" onchange="updateFont('body', this.value)">
+            <option value="'Inter', sans-serif" selected>Inter (Default)</option>
+            <option value="'Poppins', sans-serif">Poppins</option>
+            <option value="'Montserrat', sans-serif">Montserrat</option>
+            <option value="'Raleway', sans-serif">Raleway</option>
+            <option value="'Roboto', sans-serif">Roboto</option>
+            <option value="'Playfair Display', serif">Playfair Display</option>
+            <option value="Georgia, serif">Georgia</option>
+          </select>
+        </div>
+
+        <!-- Font Size: Controls base text size. Everything scales from this. -->
+        <div>
+          <label style="font-size:0.85rem;font-weight:500;display:flex;justify-content:space-between;">
+            Base Font Size
+            <span class="range-value" id="fontSizeValue">16px</span>
+          </label>
+          <input type="range" id="fontSize" min="12" max="22" value="16" oninput="updateFontSize(this.value)">
+          <div class="range-labels">
+            <span>Smaller</span>
+            <span>Larger</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== SPACING & SHAPE ====================
+           Control how rounded corners are.
+           "Small" = subtle rounding, "Large" = very round, pill-like. -->
+
+      <div class="editor-section">
+        <h5><i class="fas fa-shapes me-2"></i>Shape & Spacing</h5>
+
+        <!-- Border Radius: How rounded corners appear -->
+        <div class="mb-3">
+          <label style="font-size:0.85rem;font-weight:500;display:flex;justify-content:space-between;">
+            Corner Rounding
+            <span class="range-value" id="radiusValue">20px</span>
+          </label>
+          <input type="range" id="borderRadius" min="0" max="40" value="20" oninput="updateRadius(this.value)">
+          <div class="range-labels">
+            <span>Square</span>
+            <span>Pill</span>
+          </div>
+        </div>
+
+        <!-- Section Padding: Space inside each section -->
+        <div>
+          <label style="font-size:0.85rem;font-weight:500;display:flex;justify-content:space-between;">
+            Section Spacing
+            <span class="range-value" id="spacingValue">100px</span>
+          </label>
+          <input type="range" id="sectionSpacing" min="40" max="160" value="100" oninput="updateSpacing(this.value)">
+          <div class="range-labels">
+            <span>Compact</span>
+            <span>Spacious</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== INSTRUCTIONS ====================
+           Simple step-by-step guide for applying the theme. -->
+      <div class="editor-section" style="background:var(--gray-50);padding:1rem;border-radius:var(--radius-md);border:1px solid var(--gray-100);">
+        <h5><i class="fas fa-info-circle me-2"></i>How to Apply</h5>
+        <ol style="font-size:0.85rem;color:var(--gray-600);margin:0;padding-left:1.25rem;line-height:1.8;">
+          <li>Customize using the controls above</li>
+          <li>Click <strong>"Export Theme"</strong> below</li>
+          <li>A file will download — open it</li>
+          <li>Copy ALL the text inside the file</li>
+          <li>Open <code>portfolio/css/base.css</code></li>
+          <li>Select all (Ctrl+A) and paste (Ctrl+V)</li>
+          <li>Save the file — your theme is live!</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         RIGHT PANEL — Live Preview
+         ============================================================
+         This shows a real-time preview of how your changes look.
+         The preview updates instantly when you change any setting. -->
+
+    <div class="editor-preview">
+      <div class="preview-frame">
+
+        <!-- Browser chrome mockup -->
+        <div class="preview-header">
+          <span class="preview-dot red"></span>
+          <span class="preview-dot yellow"></span>
+          <span class="preview-dot green"></span>
+          <span class="preview-url" id="previewUrl">yourportfolio.com</span>
+        </div>
+
+        <!-- Live Preview Content -->
+        <div class="preview-body" id="previewBody">
+
+          <!-- Preview: Navbar -->
+          <div class="preview-section" id="previewNav" style="background:var(--secondary);border:none;color:white;padding:1rem 1.5rem;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:space-between;">
+            <div style="font-weight:700;font-family:var(--font-heading);">
+              <span style="display:inline-block;width:8px;height:8px;background:var(--primary);border-radius:50%;margin-right:6px;"></span>Alex Morgan
+            </div>
+            <div style="display:flex;gap:1rem;font-size:0.85rem;opacity:0.7;">
+              <span>Home</span><span>About</span><span>Projects</span><span>Contact</span>
+            </div>
+          </div>
+
+          <!-- Preview: Hero -->
+          <div class="preview-section" style="background:var(--gradient-hero);border:none;color:white;text-align:center;padding:2.5rem 1.5rem;border-radius:var(--radius-md);margin-bottom:2rem;">
+            <p style="color:var(--primary-light);font-family:var(--font-mono);font-size:0.8rem;margin-bottom:0.5rem;">Hello, I'm</p>
+            <h1 style="color:white;font-size:2rem;margin-bottom:0.5rem;">Alex <span style="background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Morgan</span></h1>
+            <p style="color:var(--gray-400);font-size:0.95rem;margin-bottom:1rem;">Computer Science Student @ Stanford</p>
+            <div style="display:flex;gap:0.75rem;justify-content:center;">
+              <span style="background:var(--gradient-primary);color:white;padding:0.5rem 1.25rem;border-radius:var(--radius-xl);font-size:0.8rem;font-weight:600;">About Me</span>
+              <span style="border:2px solid rgba(255,255,255,0.3);color:white;padding:0.5rem 1.25rem;border-radius:var(--radius-xl);font-size:0.8rem;font-weight:600;">Projects</span>
+            </div>
+          </div>
+
+          <!-- Preview: Typography -->
+          <div class="preview-section">
+            <h6>Typography</h6>
+            <h2 style="margin-bottom:0.5rem;">Heading 2</h2>
+            <h4 style="margin-bottom:0.5rem;color:var(--gray-700);">Heading 4 — Subtitle text</h4>
+            <p style="margin-bottom:1rem;color:var(--gray-600);">This is how your body text will look. The font, size, and color all update live as you change settings on the left panel.</p>
+            <span style="font-family:var(--font-mono);font-size:0.85rem;color:var(--primary);">monospace: code font</span>
+          </div>
+
+          <!-- Preview: Buttons -->
+          <div class="preview-section">
+            <h6>Buttons</h6>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <span style="background:var(--gradient-primary);color:white;padding:0.6rem 1.5rem;border-radius:var(--radius-xl);font-size:0.85rem;font-weight:600;display:inline-flex;align-items:center;gap:0.4rem;">
+                <i class="fas fa-download" style="font-size:0.75rem;"></i> Primary Button
+              </span>
+              <span style="border:2px solid var(--primary);color:var(--primary);padding:0.6rem 1.5rem;border-radius:var(--radius-xl);font-size:0.85rem;font-weight:600;">
+                Outline Button
+              </span>
+              <span style="background:var(--gray-100);color:var(--gray-600);padding:0.6rem 1.5rem;border-radius:var(--radius-xl);font-size:0.85rem;font-weight:600;">
+                Secondary
+              </span>
+            </div>
+          </div>
+
+          <!-- Preview: Cards -->
+          <div class="preview-section">
+            <h6>Cards & Badges</h6>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:1.25rem;">
+                <div style="width:40px;height:40px;background:rgba(37,99,235,0.08);color:var(--primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h5 style="font-size:0.95rem;margin-bottom:0.25rem;">Web Development</h5>
+                <p style="font-size:0.8rem;color:var(--gray-500);margin-bottom:0.5rem;">React, Node.js, Python</p>
+                <span style="display:inline-block;padding:0.2rem 0.6rem;border-radius:var(--radius-xl);font-size:0.7rem;font-weight:600;background:rgba(37,99,235,0.1);color:var(--primary);margin-right:0.25rem;">React</span>
+                <span style="display:inline-block;padding:0.2rem 0.6rem;border-radius:var(--radius-xl);font-size:0.7rem;font-weight:600;background:rgba(37,99,235,0.1);color:var(--primary);">Node.js</span>
+              </div>
+              <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:1.25rem;">
+                <div style="width:40px;height:40px;background:rgba(37,99,235,0.08);color:var(--primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <h5 style="font-size:0.95rem;margin-bottom:0.25rem;">Machine Learning</h5>
+                <p style="font-size:0.8rem;color:var(--gray-500);margin-bottom:0.5rem;">TensorFlow, PyTorch</p>
+                <span style="display:inline-block;padding:0.2rem 0.6rem;border-radius:var(--radius-xl);font-size:0.7rem;font-weight:600;background:rgba(16,185,129,0.1);color:#10b981;margin-right:0.25rem;">TensorFlow</span>
+                <span style="display:inline-block;padding:0.2rem 0.6rem;border-radius:var(--radius-xl);font-size:0.7rem;font-weight:600;background:rgba(37,99,235,0.1);color:var(--primary);">PyTorch</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Preview: Stats -->
+          <div class="preview-section" style="background:var(--gray-50);border:none;">
+            <h6>Stats</h6>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;text-align:center;">
+              <div>
+                <div style="font-size:1.75rem;font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">15+</div>
+                <div style="font-size:0.8rem;color:var(--gray-500);">Projects</div>
+              </div>
+              <div>
+                <div style="font-size:1.75rem;font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">8</div>
+                <div style="font-size:0.8rem;color:var(--gray-500);">Certifications</div>
+              </div>
+              <div>
+                <div style="font-size:1.75rem;font-weight:800;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">500+</div>
+                <div style="font-size:0.8rem;color:var(--gray-500);">Contributions</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Preview: Footer -->
+          <div style="background:var(--gray-900);color:var(--gray-400);padding:1.5rem;border-radius:var(--radius-md);text-align:center;margin-top:1rem;">
+            <p style="font-size:0.85rem;margin:0;">© 2026 Alex Morgan. Crafted with <i class="fas fa-heart" style="color:var(--primary-light);"></i></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================
+       ACTION BUTTONS (Fixed at bottom)
+       ============================================================
+       Export: Downloads a CSS file with your theme settings
+       Reset: Returns all settings to defaults
+       Copy: Copies the CSS to clipboard -->
+  <div class="action-buttons">
+    <button class="btn btn-primary-custom" onclick="exportTheme()" style="flex:2;">
+      <i class="fas fa-download"></i> Export Theme
+    </button>
+    <button class="btn btn-outline-primary-custom" onclick="copyTheme()">
+      <i class="fas fa-copy"></i> Copy CSS
+    </button>
+    <button class="btn btn-outline-primary-custom" onclick="resetTheme()" style="color:var(--gray-500);border-color:var(--gray-300);">
+      <i class="fas fa-rotate-left"></i> Reset
+    </button>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast-message" id="toastMessage">Copied to clipboard!</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* ============================================================
+       THEME CUSTOMIZER — JavaScript
+       ============================================================
+       This code handles all the live preview and export logic.
+       You don't need to edit this unless you want to add new controls. */
+
+    // ===== STATE =====
+    // These store the current theme values.
+    // When you change a control, these update and the preview refreshes.
+    let theme = {
+      primary: '#2563eb',
+      accent: '#06b6d4',
+      dark: '#0f172a',
+      bg: '#ffffff',
+      text: '#475569',
+      fontHeading: "'Space Grotesk', sans-serif",
+      fontBody: "'Inter', sans-serif",
+      fontSize: 16,
+      borderRadius: 20,
+      sectionSpacing: 100,
+      darkMode: false
+    };
+
+    // ===== PRESETS =====
+    // Each preset is a complete color scheme.
+    // To add your own: 1) Add a button in the HTML preset-grid above
+    //    2) Add the colors here like this:
+    //    mypreset: { primary: '#hex', accent: '#hex', dark: '#hex', bg: '#hex', text: '#hex' }
+    //
+    // HOW TO PICK COLORS:
+    // 1. Go to coolors.co or google "color picker"
+    // 2. Pick a "primary" color (your main brand color)
+    // 3. Pick an "accent" color (a complementary lighter color)
+    // 4. Pick a "dark" color (for dark backgrounds — usually very dark blue/black)
+    // 5. "bg" is usually #ffffff (white) or #0f172a (dark)
+    // 6. "text" is your paragraph color — #475569 works for most themes
+    const presets = {
+      /* --- Professional --- */
+      default:    { primary: '#2563eb', accent: '#06b6d4', dark: '#0f172a', bg: '#ffffff', text: '#475569' },
+      corporate:  { primary: '#1e40af', accent: '#3b82f6', dark: '#111827', bg: '#ffffff', text: '#374151' },
+      slate:      { primary: '#475569', accent: '#94a3b8', dark: '#0f172a', bg: '#ffffff', text: '#475569' },
+
+      /* --- Bold --- */
+      emerald:    { primary: '#059669', accent: '#10b981', dark: '#064e3b', bg: '#ffffff', text: '#475569' },
+      violet:     { primary: '#7c3aed', accent: '#a78bfa', dark: '#1e1b4b', bg: '#ffffff', text: '#475569' },
+      rose:       { primary: '#e11d48', accent: '#fb7185', dark: '#1c1917', bg: '#ffffff', text: '#475569' },
+
+      /* --- Warm --- */
+      amber:      { primary: '#d97706', accent: '#fbbf24', dark: '#1c1917', bg: '#ffffff', text: '#475569' },
+      coral:      { primary: '#ea580c', accent: '#fb923c', dark: '#1c1917', bg: '#ffffff', text: '#475569' },
+      sunset:     { primary: '#dc2626', accent: '#f59e0b', dark: '#1c1917', bg: '#ffffff', text: '#475569' },
+
+      /* --- Cool --- */
+      ocean:      { primary: '#0891b2', accent: '#06b6d4', dark: '#0c4a6e', bg: '#ffffff', text: '#475569' },
+      teal:       { primary: '#0d9488', accent: '#2dd4bf', dark: '#042f2e', bg: '#ffffff', text: '#475569' },
+      arctic:     { primary: '#0284c7', accent: '#7dd3fc', dark: '#0c4a6e', bg: '#ffffff', text: '#475569' },
+
+      /* --- Creative --- */
+      magenta:    { primary: '#c026d3', accent: '#e879f9', dark: '#1a0a2e', bg: '#ffffff', text: '#475569' },
+      indigo:     { primary: '#4f46e5', accent: '#818cf8', dark: '#1e1b4b', bg: '#ffffff', text: '#475569' },
+      forest:     { primary: '#15803d', accent: '#4ade80', dark: '#052e16', bg: '#ffffff', text: '#475569' },
+
+      /* --- Dark Pro --- */
+      midnight:   { primary: '#6366f1', accent: '#a5b4fc', dark: '#020617', bg: '#ffffff', text: '#475569' },
+      charcoal:   { primary: '#f59e0b', accent: '#fcd34d', dark: '#18181b', bg: '#ffffff', text: '#475569' },
+      neon:       { primary: '#22d3ee', accent: '#a3e635', dark: '#0a0a0a', bg: '#ffffff', text: '#475569' }
+    };
+
+    // ===== GRADIENT STATE =====
+    // Stores the current gradient direction. Updated by updateGradient().
+    let gradientDirection = '135deg';
+
+    // ===== UPDATE GRADIENT =====
+    // Changes the gradient direction/style used across the site.
+    // 'none' removes the gradient entirely and uses a solid color.
+    function updateGradient(direction) {
+      gradientDirection = direction;
+
+      // Highlight active gradient button
+      document.querySelectorAll('[data-gradient]').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.gradient === direction);
+      });
+
+      refreshPreview();
+    }
+
+    // ===== APPLY PRESET =====
+    // Applies a complete color scheme from the presets above.
+    function applyPreset(name) {
+      const p = presets[name];
+      if (!p) return;
+
+      theme.primary = p.primary;
+      theme.accent = p.accent;
+      theme.dark = p.dark;
+      theme.bg = p.bg;
+      theme.text = p.text;
+
+      // Update color picker inputs
+      document.getElementById('colorPrimary').value = p.primary;
+      document.getElementById('colorAccent').value = p.accent;
+      document.getElementById('colorDark').value = p.dark;
+      document.getElementById('colorBg').value = p.bg;
+      document.getElementById('colorText').value = p.text;
+
+      // Update hex displays
+      document.getElementById('hexPrimary').textContent = p.primary;
+      document.getElementById('hexAccent').textContent = p.accent;
+      document.getElementById('hexDark').textContent = p.dark;
+      document.getElementById('hexBg').textContent = p.bg;
+      document.getElementById('hexText').textContent = p.text;
+
+      // Highlight active preset button
+      document.querySelectorAll('.preset-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.preset === name);
+      });
+
+      refreshPreview();
+    }
+
+    // ===== COLOR UPDATE =====
+    // Called when any color picker changes.
+    function updateColor(type, value) {
+      theme[type] = value;
+      document.getElementById('hex' + type.charAt(0).toUpperCase() + type.slice(1)).textContent = value;
+      refreshPreview();
+    }
+
+    // ===== FONT UPDATE =====
+    function updateFont(type, value) {
+      if (type === 'heading') theme.fontHeading = value;
+      else theme.fontBody = value;
+      refreshPreview();
+    }
+
+    // ===== FONT SIZE UPDATE =====
+    function updateFontSize(value) {
+      theme.fontSize = parseInt(value);
+      document.getElementById('fontSizeValue').textContent = value + 'px';
+      refreshPreview();
+    }
+
+    // ===== BORDER RADIUS UPDATE =====
+    function updateRadius(value) {
+      theme.borderRadius = parseInt(value);
+      document.getElementById('radiusValue').textContent = value + 'px';
+      refreshPreview();
+    }
+
+    // ===== SECTION SPACING UPDATE =====
+    function updateSpacing(value) {
+      theme.sectionSpacing = parseInt(value);
+      document.getElementById('spacingValue').textContent = value + 'px';
+      refreshPreview();
+    }
+
+    // ===== DARK MODE TOGGLE =====
+    function toggleDarkMode() {
+      theme.darkMode = !theme.darkMode;
+      const toggle = document.getElementById('darkModeToggle');
+      toggle.classList.toggle('active', theme.darkMode);
+
+      if (theme.darkMode) {
+        theme.bg = '#0f172a';
+        theme.text = '#cbd5e1';
+        document.getElementById('colorBg').value = '#0f172a';
+        document.getElementById('colorText').value = '#cbd5e1';
+        document.getElementById('hexBg').textContent = '#0f172a';
+        document.getElementById('hexText').textContent = '#cbd5e1';
+      } else {
+        theme.bg = '#ffffff';
+        theme.text = '#475569';
+        document.getElementById('colorBg').value = '#ffffff';
+        document.getElementById('colorText').value = '#475569';
+        document.getElementById('hexBg').textContent = '#ffffff';
+        document.getElementById('hexText').textContent = '#475569';
+      }
+      refreshPreview();
+    }
+
+    // ===== REFRESH PREVIEW =====
+    // Applies all current theme values to the preview area.
+    function refreshPreview() {
+      const root = document.documentElement;
+      const body = document.getElementById('previewBody');
+
+      // Compute lighter/darker variants
+      const primaryLight = adjustColor(theme.primary, 40);
+      const primaryDark = adjustColor(theme.primary, -20);
+      const gray50 = theme.darkMode ? '#1e293b' : '#f8fafc';
+      const gray100 = theme.darkMode ? '#2d3a4f' : '#f1f5f9';
+      const gray200 = theme.darkMode ? '#3d4a5f' : '#e2e8f0';
+      const gray400 = theme.darkMode ? '#94a3b8' : '#94a3b8';
+      const gray500 = theme.darkMode ? '#cbd5e1' : '#64748b';
+      const gray600 = theme.darkMode ? '#94a3b8' : '#475569';
+      const gray900 = theme.dark ? theme.dark : '#0f172a';
+
+      // Apply to CSS variables
+      root.style.setProperty('--primary', theme.primary);
+      root.style.setProperty('--primary-dark', primaryDark);
+      root.style.setProperty('--primary-light', primaryLight);
+      root.style.setProperty('--accent', theme.accent);
+      root.style.setProperty('--accent-light', adjustColor(theme.accent, 30));
+      root.style.setProperty('--secondary', theme.dark);
+      root.style.setProperty('--white', theme.darkMode ? '#1e293b' : '#ffffff');
+      root.style.setProperty('--gray-50', gray50);
+      root.style.setProperty('--gray-100', gray100);
+      root.style.setProperty('--gray-200', gray200);
+      root.style.setProperty('--gray-400', gray400);
+      root.style.setProperty('--gray-500', gray500);
+      root.style.setProperty('--gray-600', gray600);
+      root.style.setProperty('--gray-700', theme.darkMode ? '#e2e8f0' : '#334155');
+      root.style.setProperty('--gray-800', theme.darkMode ? '#334155' : '#1e293b');
+      root.style.setProperty('--gray-900', gray900);
+      root.style.setProperty('--font-heading', theme.fontHeading);
+      root.style.setProperty('--font-primary', theme.fontBody);
+      root.style.setProperty('--radius-lg', theme.borderRadius + 'px');
+      root.style.setProperty('--section-padding', theme.sectionSpacing + 'px 0');
+      const gradStr = gradientDirection === 'none'
+        ? theme.primary
+        : gradientDirection === 'radial'
+          ? `radial-gradient(circle, ${theme.primary}, ${theme.accent})`
+          : `linear-gradient(${gradientDirection}, ${theme.primary}, ${theme.accent})`;
+      root.style.setProperty('--gradient-primary', gradStr);
+      root.style.setProperty('--gradient-hero', `linear-gradient(135deg, ${theme.dark} 0%, ${adjustColor(theme.dark, 20)} 50%, ${theme.dark} 100%)`);
+
+      // Apply font size
+      body.style.fontSize = theme.fontSize + 'px';
+    }
+
+    // ===== COLOR HELPER =====
+    // Lightens or darkens a hex color by a percentage.
+    // Positive values = lighter, negative = darker.
+    function adjustColor(hex, amount) {
+      hex = hex.replace('#', '');
+      const r = Math.min(255, Math.max(0, parseInt(hex.substring(0, 2), 16) + amount));
+      const g = Math.min(255, Math.max(0, parseInt(hex.substring(2, 4), 16) + amount));
+      const b = Math.min(255, Math.max(0, parseInt(hex.substring(4, 6), 16) + amount));
+      return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+    }
+
+    // ===== EXPORT THEME =====
+    // Generates a CSS file with all theme variables and downloads it.
+    function exportTheme() {
+      const css = generateThemeCSS();
+      const blob = new Blob([css], { type: 'text/css' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'my-theme.css';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast('Theme exported! Replace base.css contents with this file.');
+    }
+
+    // ===== COPY THEME =====
+    // Copies the generated CSS to clipboard.
+    function copyTheme() {
+      const css = generateThemeCSS();
+      navigator.clipboard.writeText(css).then(() => {
+        showToast('CSS copied to clipboard! Paste it into base.css');
+      }).catch(() => {
+        showToast('Failed to copy. Try Export instead.');
+      });
+    }
+
+    // ===== RESET THEME =====
+    // Returns everything to the original default values.
+    function resetTheme() {
+      applyPreset('default');
+      document.getElementById('fontHeading').value = "'Space Grotesk', sans-serif";
+      document.getElementById('fontBody').value = "'Inter', sans-serif";
+      document.getElementById('fontSize').value = 16;
+      document.getElementById('borderRadius').value = 20;
+      document.getElementById('sectionSpacing').value = 100;
+      theme.fontHeading = "'Space Grotesk', sans-serif";
+      theme.fontBody = "'Inter', sans-serif";
+      theme.fontSize = 16;
+      theme.borderRadius = 20;
+      theme.sectionSpacing = 100;
+      theme.darkMode = false;
+      document.getElementById('darkModeToggle').classList.remove('active');
+      document.getElementById('fontSizeValue').textContent = '16px';
+      document.getElementById('radiusValue').textContent = '20px';
+      document.getElementById('spacingValue').textContent = '100px';
+      refreshPreview();
+      showToast('Theme reset to defaults');
+    }
+
+    // ===== GENERATE CSS =====
+    // Builds the complete CSS file content from current theme values.
+    function generateThemeCSS() {
+      const primaryLight = adjustColor(theme.primary, 40);
+      const primaryDark = adjustColor(theme.primary, -20);
+      const accentLight = adjustColor(theme.accent, 30);
+
+      return `/* ========================================
+   BASE CSS — Variables, Resets & Typography
+   ========================================
+   
+   Generated by Theme Customizer
+   To customize, use the Theme page in your portfolio,
+   or edit the values below directly.
+
+   HOW TO EDIT COLORS:
+   Colors use "hex codes" like #2563eb.
+   Google "color picker" to find new hex codes.
+   Then replace the value after the colon.
+
+   HOW TO EDIT FONTS:
+   Change the font name between the quotes.
+   Find fonts at fonts.google.com
+   ======================================== */
+
+:root {
+  /* Primary Palette */
+  --primary: ${theme.primary};
+  --primary-dark: ${primaryDark};
+  --primary-light: ${primaryLight};
+  --secondary: ${theme.dark};
+  --accent: ${theme.accent};
+  --accent-light: ${accentLight};
+
+  /* Neutral Palette */
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Gradients */
+  --gradient-primary: ${gradientDirection === 'none' ? 'var(--primary)' : gradientDirection === 'radial' ? `radial-gradient(circle, var(--primary), var(--accent))` : `linear-gradient(${gradientDirection}, var(--primary), var(--accent))`};
+  --gradient-dark: linear-gradient(135deg, var(--secondary), var(--gray-700));
+  --gradient-hero: linear-gradient(135deg, ${theme.dark} 0%, ${adjustColor(theme.dark, 20)} 50%, ${theme.dark} 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 30px rgba(37, 99, 235, 0.3);
+
+  /* Typography */
+  --font-primary: ${theme.fontBody};
+  --font-heading: ${theme.fontHeading};
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --section-padding: ${theme.sectionSpacing}px 0;
+  --container-max: 1200px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: ${theme.borderRadius}px;
+  --radius-xl: 30px;
+  --radius-full: 50%;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-spring: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: ${theme.fontSize}px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--gray-700);
+  background-color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: var(--transition-base);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--gray-900);
+  line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+  margin-bottom: 1rem;
+  color: var(--gray-600);
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+`;
+    }
+
+    // ===== TOAST NOTIFICATION =====
+    function showToast(message) {
+      const toast = document.getElementById('toastMessage');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>
