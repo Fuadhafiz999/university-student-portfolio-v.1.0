@@ -1,111 +1,70 @@
-/* ========================================
-   NAVIGATION JS — Menu & Active State
-   ======================================== */
+/* ============================================
+   navigation.js — Active Page Highlight & Scroll Navbar
+   ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 1. Active Page Highlight
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
-  // ===== Active Nav Link (URL-based) =====
-  function setActiveNavLink() {
-    const currentPath = window.location.pathname;
-    const fileName = currentPath.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-link-custom');
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      const href = link.getAttribute('href') || '';
+    const linkPage = href.split('/').pop();
 
-      // Match based on current page filename
-      if (fileName === 'index.html' && (href === '../index.html' || href === 'index.html' || href === '/')) {
-        link.classList.add('active');
-      } else if (fileName !== 'index.html' && href.includes(fileName)) {
+    // Exact match for index
+    if (currentPage === 'index.html' || currentPage === '') {
+      if (linkPage === 'index.html' || linkPage === '') {
         link.classList.add('active');
       }
-    });
-  }
+    } else if (linkPage === currentPage) {
+      link.classList.add('active');
+    }
+  });
 
-  setActiveNavLink();
-
-  // ===== Mobile Menu Toggle Animation =====
-  const navbarToggler = document.querySelector('.navbar-toggler-custom');
-  const navbarCollapse = document.querySelector('.navbar-collapse');
-
-  if (navbarToggler && navbarCollapse) {
-    navbarToggler.addEventListener('click', () => {
-      navbarToggler.classList.toggle('active');
-    });
-
-    // Close menu on outside click
-    document.addEventListener('click', (e) => {
-      if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
-        if (navbarCollapse.classList.contains('show')) {
-          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-          if (bsCollapse) bsCollapse.hide();
-          navbarToggler.classList.remove('active');
-        }
+  // 2. Scroll Navbar Background
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
       }
-    });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
   }
 
-  // ===== Close Mobile Nav on Link Click =====
-  if (navbarCollapse) {
-    document.querySelectorAll('.nav-link-custom').forEach(link => {
-      link.addEventListener('click', () => {
-        if (navbarCollapse.classList.contains('show')) {
-          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-          if (bsCollapse) bsCollapse.hide();
-          navbarToggler?.classList.remove('active');
+  // 3. Mobile nav — let browser navigate naturally
+  // The collapse closes automatically on page load (no explicit hide needed)
+  // Explicit bsCollapse.hide() caused background to fade before navigation,
+  // making nav items appear to overlap with page content.
+
+  // 4. Scroll-based active section highlighting (for index.html)
+  const sections = document.querySelectorAll('section[id]');
+  if (sections.length) {
+    const observerOptions = {
+      rootMargin: '-20% 0px -80% 0px',
+      threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
         }
       });
-    });
-  }
+    }, observerOptions);
 
-  // ===== Keyboard Navigation =====
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navbarCollapse?.classList.contains('show')) {
-      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-      if (bsCollapse) bsCollapse.hide();
-      navbarToggler?.classList.remove('active');
-    }
-  });
-
-  // ===== Scroll-based Header Hide/Show =====
-  let lastScrollY = window.scrollY;
-  let ticking = false;
-  const navbar = document.querySelector('.navbar-custom');
-
-  function updateHeaderVisibility() {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      navbar?.classList.add('header-hidden');
-    } else {
-      navbar?.classList.remove('header-hidden');
-    }
-
-    lastScrollY = currentScrollY;
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(updateHeaderVisibility);
-      ticking = true;
-    }
-  });
-
-  // ===== Back to Top =====
-  const backToTop = document.querySelector('.back-to-top');
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    });
-
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    sections.forEach(section => sectionObserver.observe(section));
   }
 });

@@ -3,255 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Achievements | Alex Morgan</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="description" content="Achievements, awards, and leadership activities of Ahshan Hafiz Fuad">
+  <title>Achievements — Ahshan Hafiz Fuad</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-  <div class="preloader"><div class="preloader-spinner"></div></div>
-  <div class="scroll-progress" style="position:fixed;top:0;left:0;height:3px;background:var(--gradient-primary);z-index:10001;transition:width 0.1s;"></div>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
     <div class="container">
-      <a class="navbar-brand-custom" href="../index.html"><span class="brand-dot"></span> Alex Morgan</a>
-      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span></span><span></span><span></span></button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <a class="navbar-brand" href="../index.html">
+        <span class="brand-icon">AH</span>
+        Ahshan<span class="gradient-text">.</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <button class="navbar-close-btn d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Close navigation">
+          <i class="fas fa-times"></i>
+        </button>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link-custom" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link-custom active" href="achievements.html">Achievements</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="training.html">Training</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="portfolio.html">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="theme.html">Theme</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn btn-primary-custom ms-lg-3" target="_blank"><i class="fas fa-download"></i> Resume</a>
+        <a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn-primary-custom ms-lg-3" target="_blank">
+          <i class="fas fa-download"></i> CV
+        </a>
       </div>
     </div>
   </nav>
 
-  <section class="page-hero">
+  <!-- Page Header -->
+  <section class="page-header">
     <div class="container">
-      <h1 data-aos="fade-up">Achievements</h1>
-      <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-          <li class="breadcrumb-item active">Achievements</li>
-        </ol>
-      </nav>
+      <h1 data-aos="fade-up">My <span class="gradient-text">Achievements</span></h1>
+      <p data-aos="fade-up" data-aos-delay="100">Awards, publications, and leadership milestones throughout my academic journey.</p>
     </div>
   </section>
 
-  <!-- Academic Honors -->
+  <!-- Awards Section -->
   <section class="section">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// Academic Honors</span>
-        <h2 class="section-title">Awards & Recognition</h2>
-        <p class="section-subtitle">Milestones that have shaped my academic journey</p>
+      <div class="section-title" data-aos="fade-up">
+        <span class="label">// Awards & Honors</span>
+        <h2>Recognition & <span class="gradient-text">Awards</span></h2>
+        <p>Academic honors and competition achievements.</p>
       </div>
-
       <div class="row g-4">
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
           <div class="achievement-card">
-            <span class="year-badge">2025</span>
-            <h4><i class="fas fa-trophy me-2" style="color:var(--primary);"></i> Dean's List — All Semesters</h4>
-            <p>Consistently maintained a GPA above 3.85, earning Dean's List recognition every semester at Stanford University.</p>
+            <div class="achievement-icon gold"><i class="fas fa-trophy"></i></div>
+            <span class="badge-custom badge-warning">2025</span>
+            <h4 class="mt-2">Dean's List Excellence</h4>
+            <div class="date">University of Dhaka</div>
+            <p>Achieved Dean's List recognition for outstanding academic performance in Computer Science with a GPA above 3.8.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="achievement-card">
+            <div class="achievement-icon blue"><i class="fas fa-medal"></i></div>
+            <span class="badge-custom badge-primary">2024</span>
+            <h4 class="mt-2">Programming Contest Winner</h4>
+            <div class="date">ICPC Regional Contest</div>
+            <p>Secured top 10 placement in the ICPC South Asia Regional Programming Contest representing the university team.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="achievement-card">
+            <div class="achievement-icon green"><i class="fas fa-award"></i></div>
+            <span class="badge-custom badge-success">2024</span>
+            <h4 class="mt-2">Best Project Award</h4>
+            <div class="date">CS Department</div>
+            <p>Won the Best Final Year Project Award for developing an AI-powered educational platform.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="achievement-card">
+            <div class="achievement-icon cyan"><i class="fas fa-certificate"></i></div>
+            <span class="badge-custom badge-accent">2023</span>
+            <h4 class="mt-2">Hackathon First Place</h4>
+            <div class="date">Dhaka Tech Hackathon</div>
+            <p>Led a team of four to win first place at the 48-hour hackathon for building a healthcare accessibility solution.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="achievement-card">
+            <div class="achievement-icon gold"><i class="fas fa-star"></i></div>
+            <span class="badge-custom badge-warning">2023</span>
+            <h4 class="mt-2">Merit Scholarship</h4>
+            <div class="date">University of Dhaka</div>
+            <p>Received merit-based scholarship for exceptional academic performance in the first two years of study.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <span class="label">// Publications</span>
+        <h2>Research & <span class="gradient-text">Publications</span></h2>
+        <p>Academic papers and research contributions.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="glass-card">
+            <span class="badge-custom badge-primary mb-3">Research Paper</span>
+            <h4 style="font-size: var(--fs-base);">Machine Learning Approaches for Bangla Sentiment Analysis</h4>
+            <p class="mb-2" style="color: var(--gray-500); font-family: var(--font-mono); font-size: var(--fs-xs);">Published: 2025 — IEEE Conference</p>
+            <p>Explored transformer-based models for sentiment analysis in Bangla language, achieving state-of-the-art results on benchmark datasets.</p>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="glass-card">
+            <span class="badge-custom badge-accent mb-3">Workshop Paper</span>
+            <h4 style="font-size: var(--fs-base);">Low-Resource NLP for South Asian Languages</h4>
+            <p class="mb-2" style="color: var(--gray-500); font-family: var(--font-mono); font-size: var(--fs-xs);">Presented: 2024 — NLP Symposium</p>
+            <p>Presented findings on transfer learning techniques to improve NLP model performance on low-resource South Asian languages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <span class="label">// Leadership</span>
+        <h2>Leadership & <span class="gradient-text">Activities</span></h2>
+        <p>Roles and contributions to the community.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="achievement-card">
+            <div class="achievement-icon blue"><i class="fas fa-users"></i></div>
+            <h4>President, CS Student Association</h4>
+            <div class="date">2024 — Present</div>
+            <p>Leading the Computer Science Student Association, organizing tech events, workshops, and hackathons for 200+ members.</p>
           </div>
         </div>
         <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
           <div class="achievement-card">
-            <span class="year-badge">2025</span>
-            <h4><i class="fas fa-medal me-2" style="color:var(--primary);"></i> Stanford AI Research Fellowship</h4>
-            <p>Selected as one of 10 undergraduates to receive the prestigious AI Research Fellowship for outstanding academic performance and research potential.</p>
+            <div class="achievement-icon green"><i class="fas fa-chalkboard-teacher"></i></div>
+            <h4>Teaching Assistant, Data Structures</h4>
+            <div class="date">2023 — 2024</div>
+            <p>Served as a teaching assistant for the Data Structures & Algorithms course, mentoring 50+ students weekly.</p>
           </div>
         </div>
         <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
           <div class="achievement-card">
-            <span class="year-badge">2024</span>
-            <h4><i class="fas fa-award me-2" style="color:var(--primary);"></i ACM ICPC Regional Finalist</h4>
-            <p>Team placed 3rd at the ACM International Collegiate Programming Contest Pacific Northwest Regional, solving 7/12 problems in 5 hours.</p>
+            <div class="achievement-icon cyan"><i class="fas fa-code"></i></div>
+            <h4>Open Source Contributor</h4>
+            <div class="date">2022 — Present</div>
+            <p>Active contributor to open-source projects on GitHub, with contributions to popular JavaScript and Python libraries.</p>
           </div>
         </div>
         <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
           <div class="achievement-card">
-            <span class="year-badge">2024</span>
-            <h4><i class="fas fa-star me-2" style="color:var(--primary);"></i Google Summer of Code Contributor</h4>
-            <p>Successfully completed GSoC 2024 with Apache Software Foundation, contributing 15,000+ lines of code to improve NLP processing pipelines.</p>
-          </div>
-        </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="achievement-card">
-            <span class="year-badge">2024</span>
-            <h4><i class="fas fa-certificate me-2" style="color:var(--primary);"></i National Merit Scholar</h4>
-            <p>Awarded National Merit Scholarship based on exceptional PSAT scores and academic achievement. One of 7,500 scholars nationwide.</p>
-          </div>
-        </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-          <div class="achievement-card">
-            <span class="year-badge">2023</span>
-            <h4><i class="fas fa-flag me-2" style="color:var(--primary);"></i HackMIT Winner — 1st Place</h4>
-            <p>Won first place at HackMIT 2023 for building an AI-powered accessibility tool that translates visual content for visually impaired users.</p>
-          </div>
-        </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
-          <div class="achievement-card">
-            <span class="year-badge">2023</span>
-            <h4><i class="fas fa-book me-2" style="color:var(--primary);"></i Published Research Paper</h4>
-            <p>Co-authored paper "Efficient Multilingual Sentiment Analysis Using Transformer Models" published in the Proceedings of NAACL 2023.</p>
-          </div>
-        </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="700">
-          <div class="achievement-card">
-            <span class="year-badge">2022</span>
-            <h4><i class="fas fa-graduation-cap me-2" style="color:var(--primary);"></i AP Scholar with Distinction</h4>
-            <p>Scored 5 on 8 AP exams including Computer Science A, Calculus BC, Physics C, Statistics, and English Language.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Publications -->
-  <section class="section section-bg-light">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// Publications</span>
-        <h2 class="section-title">Research & Publications</h2>
-        <p class="section-subtitle">Contributing to the body of knowledge in computer science</p>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="card-custom mb-2" data-aos="fade-up">
-            <div class="d-flex align-items-start gap-3">
-              <div class="flex-shrink-0 d-flex align-items-center justify-content-center rounded-3" style="min-width:50px;width:50px;height:50px;background:rgba(37,99,235,0.08);color:var(--primary);">
-                <i class="fas fa-file-alt"></i>
-              </div>
-              <div class="flex-grow-1">
-                <h4 style="font-size:1.05rem;margin-bottom:0.4rem;">Efficient Multilingual Sentiment Analysis Using Transformer Models</h4>
-                <p class="mb-1" style="font-size:0.85rem;color:var(--gray-600);"><strong>A. Morgan</strong>, S. Chen, J. Liu</p>
-                <p class="mb-2" style="font-size:0.8rem;color:var(--gray-500);"><em>Proceedings of NAACL 2023 — North American Chapter of the Association for Computational Linguistics</em></p>
-                <span class="badge-custom badge-success">Peer Reviewed</span>
-                <span class="badge-custom">NLP</span>
-                <span class="badge-custom">Transformers</span>
-              </div>
-            </div>
-          </div>
-          <div class="card-custom mb-2" data-aos="fade-up" data-aos-delay="100">
-            <div class="d-flex align-items-start gap-3">
-              <div class="flex-shrink-0 d-flex align-items-center justify-content-center rounded-3" style="min-width:50px;width:50px;height:50px;background:rgba(37,99,235,0.08);color:var(--primary);">
-                <i class="fas fa-file-alt"></i>
-              </div>
-              <div class="flex-grow-1">
-                <h4 style="font-size:1.05rem;margin-bottom:0.4rem;">Real-Time Object Detection for Autonomous Navigation in Urban Environments</h4>
-                <p class="mb-1" style="font-size:0.85rem;color:var(--gray-600);"><strong>A. Morgan</strong>, M. Patel</p>
-                <p class="mb-2" style="font-size:0.8rem;color:var(--gray-500);"><em>Stanford Undergraduate Research Journal, Vol. 24, 2024</em></p>
-                <span class="badge-custom badge-success">Published</span>
-                <span class="badge-custom">Computer Vision</span>
-                <span class="badge-custom">Deep Learning</span>
-              </div>
-            </div>
-          </div>
-          <div class="card-custom" data-aos="fade-up" data-aos-delay="200">
-            <div class="d-flex align-items-start gap-3">
-              <div class="flex-shrink-0 d-flex align-items-center justify-content-center rounded-3" style="min-width:50px;width:50px;height:50px;background:rgba(37,99,235,0.08);color:var(--primary);">
-                <i class="fas fa-file-alt"></i>
-              </div>
-              <div class="flex-grow-1">
-                <h4 style="font-size:1.05rem;margin-bottom:0.4rem;">A Survey of Federated Learning Techniques for Privacy-Preserving AI</h4>
-                <p class="mb-1" style="font-size:0.85rem;color:var(--gray-600);"><strong>A. Morgan</strong>, K. Williams, R. Zhang</p>
-                <p class="mb-2" style="font-size:0.8rem;color:var(--gray-500);"><em>arXiv preprint, 2025</em></p>
-                <span class="badge-custom badge-warning">Under Review</span>
-                <span class="badge-custom">Federated Learning</span>
-                <span class="badge-custom">Privacy</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Competitions -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// Competitions</span>
-        <h2 class="section-title">Hackathons & Contests</h2>
-        <p class="section-subtitle">Competitive programming and hackathon achievements</p>
-      </div>
-
-      <div class="row g-4 stagger-fade">
-        <div class="col-md-6 col-lg-3" data-aos="fade-up">
-          <div class="card-custom text-center h-100">
-            <div class="stat-number" style="font-size:2.5rem;">1st</div>
-            <h5 class="mt-2">HackMIT 2023</h5>
-            <p class="mb-0" style="font-size:0.85rem;">AI Accessibility Tool</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-custom text-center h-100">
-            <div class="stat-number" style="font-size:2.5rem;">3rd</div>
-            <h5 class="mt-2">ACM ICPC Regional</h5>
-            <p class="mb-0" style="font-size:0.85rem;">Pacific Northwest 2024</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-custom text-center h-100">
-            <div class="stat-number" style="font-size:2.5rem;">2nd</div>
-            <h5 class="mt-2">Google Hash Code</h5>
-            <p class="mb-0" style="font-size:0.85rem;">University Round 2024</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-custom text-center h-100">
-            <div class="stat-number" style="font-size:2.5rem;">1st</div>
-            <h5 class="mt-2">TreeHacks 2025</h5>
-            <p class="mb-0" style="font-size:0.85rem;">Climate Tech Track</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Leadership -->
-  <section class="section section-bg-dark">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// Leadership</span>
-        <h2 class="section-title">Campus Involvement</h2>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up">
-          <div class="glass-card h-100">
-            <i class="fas fa-users fa-2x mb-3" style="color:var(--primary-light);"></i>
-            <h5 class="text-white">Vice President — Stanford Coding Club</h5>
-            <p>Leading a team of 20+ developers. Organizing workshops, hack nights, and industry speaker events.</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="glass-card h-100">
-            <i class="fas fa-chalkboard-teacher fa-2x mb-3" style="color:var(--primary-light);"></i>
-            <h5 class="text-white">Teaching Assistant — CS 106A</h5>
-            <p>Mentoring 50+ students in introductory programming. Holding office hours and grading assignments.</p>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="glass-card h-100">
-            <i class="fas fa-globe fa-2x mb-3" style="color:var(--primary-light);"></i>
-            <h5 class="text-white">Open Source Maintainer</h5>
-            <p>Maintaining 3 open-source projects with 500+ GitHub stars combined. Reviewing PRs and mentoring contributors.</p>
+            <div class="achievement-icon gold"><i class="fas fa-laptop-code"></i></div>
+            <h4>Workshop Organizer, Tech Fest</h4>
+            <div class="date">2023</div>
+            <p>Organized a hands-on workshop on web development during the annual university tech festival, training 100+ participants.</p>
           </div>
         </div>
       </div>
@@ -261,55 +188,59 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h3><span class="brand-dot" style="width:8px;height:8px;background:var(--primary);border-radius:50%;display:inline-block;margin-right:6px;"></span> Alex Morgan</h3>
-          <p>Computer Science student at Stanford University.</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">Ahshan<span>.</span></div>
+          <p class="footer-description">Computer Science student passionate about building innovative software solutions.</p>
           <div class="footer-social">
-            <a href="https://github.com/Fuadhafiz999" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/ahshanhafizfuad" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/ahshanhafizfuad/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/ahshan_fuad" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
           </div>
         </div>
-        <div>
-          <h5 class="footer-title">Quick Links</h5>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="footer-heading">Navigation</h6>
           <ul class="footer-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="achievements.html">Achievements</a></li>
-            <li><a href="training.html">Training</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Portfolio</h5>
-          <ul class="footer-links">
             <li><a href="portfolio.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" target="_blank">Resume</a></li>
           </ul>
         </div>
-        <div>
-          <h5 class="footer-title">Contact Info</h5>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="footer-heading">More</h6>
           <ul class="footer-links">
-            <li><i class="fas fa-map-marker-alt me-2" style="color:var(--primary-light);"></i> Stanford, CA</li>
-            <li><i class="fas fa-envelope me-2" style="color:var(--primary-light);"></i> ahshanhafizfuad@gmail.com</li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" target="_blank">Download CV</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h6 class="footer-heading">Get in Touch</h6>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope me-2" style="color: var(--primary-light);"></i> ahshan@example.com</li>
+            <li><i class="fas fa-map-marker-alt me-2" style="color: var(--primary-light);"></i> Dhaka, Bangladesh</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="mb-0">&copy; 2026 Alex Morgan. Crafted with <i class="fas fa-heart" style="color:var(--primary-light);"></i></p>
+        <p>&copy; 2026 Ahshan Hafiz Fuad. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });</script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2.12.0/tsparticles.engine.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="../js/main.js"></script>
-  <script src="../js/animations.js"></script>
   <script src="../js/navigation.js"></script>
 </body>
 </html>

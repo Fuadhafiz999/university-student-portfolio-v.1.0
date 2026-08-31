@@ -3,302 +3,236 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Alex Morgan</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="description" content="Projects portfolio of Ahshan Hafiz Fuad">
+  <title>Projects — Ahshan Hafiz Fuad</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-  <div class="preloader"><div class="preloader-spinner"></div></div>
-  <div class="scroll-progress" style="position:fixed;top:0;left:0;height:3px;background:var(--gradient-primary);z-index:10001;transition:width 0.1s;"></div>
 
-  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
     <div class="container">
-      <a class="navbar-brand-custom" href="../index.html"><span class="brand-dot"></span> Alex Morgan</a>
-      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span></span><span></span><span></span></button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <a class="navbar-brand" href="../index.html">
+        <span class="brand-icon">AH</span>
+        Ahshan<span class="gradient-text">.</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <button class="navbar-close-btn d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Close navigation">
+          <i class="fas fa-times"></i>
+        </button>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link-custom" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="achievements.html">Achievements</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="training.html">Training</a></li>
-          <li class="nav-item"><a class="nav-link-custom active" href="portfolio.html">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="theme.html">Theme</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn btn-primary-custom ms-lg-3" target="_blank"><i class="fas fa-download"></i> Resume</a>
+        <a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn-primary-custom ms-lg-3" target="_blank">
+          <i class="fas fa-download"></i> CV
+        </a>
       </div>
     </div>
   </nav>
 
-  <section class="page-hero">
+  <!-- Page Header -->
+  <section class="page-header">
     <div class="container">
-      <h1 data-aos="fade-up">My Portfolio</h1>
-      <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-          <li class="breadcrumb-item active">Portfolio</li>
-        </ol>
-      </nav>
+      <h1 data-aos="fade-up">My <span class="gradient-text">Projects</span></h1>
+      <p data-aos="fade-up" data-aos-delay="100">A collection of projects showcasing my skills across different technologies.</p>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects Section -->
   <section class="section">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// My Projects</span>
-        <h2 class="section-title">Featured Work</h2>
-        <p class="section-subtitle">A curated collection of academic and personal projects</p>
-      </div>
-
       <!-- Filter Buttons -->
-      <div class="text-center mb-5" data-aos="fade-up">
-        <button class="btn btn-outline-primary-custom filter-btn active" data-filter="all">All</button>
-        <button class="btn btn-outline-primary-custom filter-btn" data-filter="ai">AI / ML</button>
-        <button class="btn btn-outline-primary-custom filter-btn" data-filter="web">Web Dev</button>
-        <button class="btn btn-outline-primary-custom filter-btn" data-filter="mobile">Mobile</button>
-        <button class="btn btn-outline-primary-custom filter-btn" data-filter="data">Data Science</button>
+      <div class="filter-group" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
       </div>
 
-      <div class="row g-4 project-grid">
-        <div class="col-md-6 col-lg-4 project-item" data-category="ai" data-aos="fade-up">
-          <div class="project-card h-100">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800" alt="AI Dashboard">
-              <div class="project-card-overlay">
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" data-category="fullstack" data-aos="fade-up" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/35560482/pexels-photo-35560482.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2 flex-wrap">
+              <span class="badge-custom badge-primary">React</span>
+              <span class="badge-custom badge-accent">Node.js</span>
+              <span class="badge-custom badge-success">MongoDB</span>
             </div>
-            <div class="project-card-body">
-              <h5>AI Analytics Dashboard</h5>
-              <p>Real-time ML-powered analytics dashboard with predictive insights and natural language querying.</p>
-              <div class="project-tags">
-                <span class="badge">Python</span>
-                <span class="badge">TensorFlow</span>
-                <span class="badge">React</span>
-              </div>
+            <h4>E-Commerce Platform</h4>
+            <p>A full-stack e-commerce solution with user authentication, Stripe payment integration, product management, and an admin dashboard.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="web" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-card h-100">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800" alt="E-Commerce">
-              <div class="project-card-overlay">
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
+        <!-- Project 2 -->
+        <div class="project-card" data-category="ml" data-aos="fade-up" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/17483868/pexels-photo-17483868.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2 flex-wrap">
+              <span class="badge-custom badge-primary">Python</span>
+              <span class="badge-custom badge-success">TensorFlow</span>
             </div>
-            <div class="project-card-body">
-              <h5>E-Commerce Platform</h5>
-              <p>Full-stack e-commerce solution with Stripe payments, inventory management, and admin dashboard.</p>
-              <div class="project-tags">
-                <span class="badge">Node.js</span>
-                <span class="badge">MongoDB</span>
-                <span class="badge">Stripe</span>
-              </div>
+            <h4>AI Chat Assistant</h4>
+            <p>An intelligent chatbot powered by NLP with context-aware responses, sentiment analysis, and multi-language support.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="data" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-card h-100">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Climate Data">
-              <div class="project-card-overlay">
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
+        <!-- Project 3 -->
+        <div class="project-card" data-category="fullstack" data-aos="fade-up" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/6804093/pexels-photo-6804093.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2 flex-wrap">
+              <span class="badge-custom badge-primary">Django</span>
+              <span class="badge-custom badge-warning">PostgreSQL</span>
             </div>
-            <div class="project-card-body">
-              <h5>Climate Data Visualizer</h5>
-              <p>Interactive climate data visualization tool using D3.js with real-time data from public APIs.</p>
-              <div class="project-tags">
-                <span class="badge">D3.js</span>
-                <span class="badge">Vue.js</span>
-                <span class="badge">API</span>
-              </div>
+            <h4>Task Management App</h4>
+            <p>A collaborative project management tool with real-time updates, team workspaces, and kanban boards.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="ai" data-aos="fade-up">
-          <div class="project-card h-100">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800" alt="NLP Chatbot">
-              <div class="project-card-overlay">
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
+        <!-- Project 4 -->
+        <div class="project-card" data-category="frontend" data-aos="fade-up" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/14553705/pexels-photo-14553705.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2 flex-wrap">
+              <span class="badge-custom badge-primary">React</span>
+              <span class="badge-custom badge-accent">Tailwind</span>
             </div>
-            <div class="project-card-body">
-              <h5>Multilingual Chatbot</h5>
-              <p>AI-powered chatbot supporting 12 languages with context-aware responses and sentiment analysis.</p>
-              <div class="project-tags">
-                <span class="badge">PyTorch</span>
-                <span class="badge">BERT</span>
-                <span class="badge">FastAPI</span>
-              </div>
+            <h4>Portfolio Theme Builder</h4>
+            <p>An interactive theme customizer that lets users build and preview portfolio themes in real-time with live CSS editing.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="mobile" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-card h-100">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/5053740/pexels-photo-5053740.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fitness App">
-              <div class="project-card-overlay">
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
+        <!-- Project 5 -->
+        <div class="project-card" data-category="backend" data-aos="fade-up" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/6466141/pexels-photo-6466141.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2 flex-wrap">
+              <span class="badge-custom badge-primary">Node.js</span>
+              <span class="badge-custom badge-accent">Express</span>
+              <span class="badge-custom badge-success">Redis</span>
             </div>
-            <div class="project-card-body">
-              <h5>FitTrack — Fitness App</h5>
-              <p>Cross-platform mobile app with workout tracking, nutrition logging, and progress analytics.</p>
-              <div class="project-tags">
-                <span class="badge">React Native</span>
-                <span class="badge">Firebase</span>
-                <span class="badge">Charts</span>
-              </div>
+            <h4>RESTful API Gateway</h4>
+            <p>A scalable API gateway with rate limiting, caching, JWT authentication, and comprehensive documentation.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Docs</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="web" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-card h-100">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/5765827/pexels-photo-5765827.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Task Manager">
-              <div class="project-card-overlay">
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
+        <!-- Project 6 -->
+        <div class="project-card" data-category="ml" data-aos="fade-up" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/38920013/pexels-photo-38920013.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2 flex-wrap">
+              <span class="badge-custom badge-primary">Python</span>
+              <span class="badge-custom badge-warning">Scikit-learn</span>
             </div>
-            <div class="project-card-body">
-              <h5>TaskFlow — Project Manager</h5>
-              <p>Kanban-style project management tool with real-time collaboration and team analytics.</p>
-              <div class="project-tags">
-                <span class="badge">Next.js</span>
-                <span class="badge">Socket.io</span>
-                <span class="badge">PostgreSQL</span>
-              </div>
+            <h4>Stock Price Predictor</h4>
+            <p>ML model using LSTM neural networks to predict stock prices with interactive data visualizations and backtesting.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Notebook</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="data" data-aos="fade-up">
-          <div class="project-card h-100">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Stock Predictor">
-              <div class="project-card-overlay">
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
+        <!-- Project 7 -->
+        <div class="project-card" data-category="frontend" data-aos="fade-up" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/35247741/pexels-photo-35247741.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2 flex-wrap">
+              <span class="badge-custom badge-primary">HTML5</span>
+              <span class="badge-custom badge-accent">Canvas</span>
+              <span class="badge-custom badge-success">JS</span>
             </div>
-            <div class="project-card-body">
-              <h5>StockPulse — Market Predictor</h5>
-              <p>ML-based stock market prediction tool using LSTM networks and sentiment analysis from news data.</p>
-              <div class="project-tags">
-                <span class="badge">Python</span>
-                <span class="badge">LSTM</span>
-                <span class="badge">Plotly</span>
-              </div>
+            <h4>Interactive Quiz Game</h4>
+            <p>A gamified quiz application with scoring system, leaderboards, timer challenges, and multiple difficulty levels.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Play</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="web" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-card h-100">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Blog Platform">
-              <div class="project-card-overlay">
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
+        <!-- Project 8 -->
+        <div class="project-card" data-category="fullstack" data-aos="fade-up" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/8036328/pexels-photo-8036328.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2 flex-wrap">
+              <span class="badge-custom badge-primary">Next.js</span>
+              <span class="badge-custom badge-accent">Prisma</span>
+              <span class="badge-custom badge-warning">MySQL</span>
             </div>
-            <div class="project-card-body">
-              <h5>DevBlog — Blog Platform</h5>
-              <p>Developer-focused blogging platform with Markdown support, syntax highlighting, and RSS feeds.</p>
-              <div class="project-tags">
-                <span class="badge">Astro</span>
-                <span class="badge">MDX</span>
-                <span class="badge">Tailwind</span>
-              </div>
+            <h4>Tech Blog Platform</h4>
+            <p>A modern blogging platform with markdown support, syntax highlighting, comments, and SEO optimization.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="ai" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-card h-100">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Image Classifier">
-              <div class="project-card-overlay">
-                <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-              </div>
+        <!-- Project 9 -->
+        <div class="project-card" data-category="backend" data-aos="fade-up" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/4508751/pexels-photo-4508751.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2 flex-wrap">
+              <span class="badge-custom badge-primary">Go</span>
+              <span class="badge-custom badge-accent">Docker</span>
+              <span class="badge-custom badge-success">AWS</span>
             </div>
-            <div class="project-card-body">
-              <h5>VisionAI — Image Classifier</h5>
-              <p>Custom image classification model with transfer learning, achieving 96% accuracy on CIFAR-100.</p>
-              <div class="project-tags">
-                <span class="badge">PyTorch</span>
-                <span class="badge">ResNet</span>
-                <span class="badge">Gradio</span>
-              </div>
+            <h4>File Storage Service</h4>
+            <p>A cloud file storage microservice with upload/download, file sharing, and access control using S3-compatible storage.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Docs</a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GitHub Stats -->
-  <section class="section section-bg-dark">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// Open Source</span>
-        <h2 class="section-title">GitHub Activity</h2>
-      </div>
-      <div class="row g-4 text-center">
-        <div class="col-md-3" data-aos="fade-up">
-          <div class="stat-card">
-            <div class="stat-number counter-value" data-target="523" style="color:var(--primary-light);">0</div>
-            <div class="stat-label text-white-50">Contributions (2025)</div>
-          </div>
-        </div>
-        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-          <div class="stat-card">
-            <div class="stat-number counter-value" data-target="12" style="color:var(--primary-light);">0</div>
-            <div class="stat-label text-white-50">Public Repos</div>
-          </div>
-        </div>
-        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-          <div class="stat-card">
-            <div class="stat-number counter-value" data-target="547" style="color:var(--primary-light);">0</div>
-            <div class="stat-label text-white-50">Total Stars</div>
-          </div>
-        </div>
-        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-          <div class="stat-card">
-            <div class="stat-number counter-value" data-target="89" style="color:var(--primary-light);">0</div>
-            <div class="stat-label text-white-50">Forks</div>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-4" data-aos="fade-up">
-        <a href="https://github.com/Fuadhafiz999" target="_blank" class="btn-primary-custom">
-          <i class="fab fa-github"></i> View GitHub Profile
-        </a>
       </div>
     </div>
   </section>
@@ -306,71 +240,91 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h3><span class="brand-dot" style="width:8px;height:8px;background:var(--primary);border-radius:50%;display:inline-block;margin-right:6px;"></span> Alex Morgan</h3>
-          <p>Computer Science student at Stanford University.</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">Ahshan<span>.</span></div>
+          <p class="footer-description">Computer Science student passionate about building innovative software solutions.</p>
           <div class="footer-social">
-            <a href="https://github.com/Fuadhafiz999" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/ahshanhafizfuad" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/ahshanhafizfuad/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/ahshan_fuad" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
           </div>
         </div>
-        <div>
-          <h5 class="footer-title">Quick Links</h5>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="footer-heading">Navigation</h6>
           <ul class="footer-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="achievements.html">Achievements</a></li>
-            <li><a href="training.html">Training</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Portfolio</h5>
-          <ul class="footer-links">
             <li><a href="portfolio.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" target="_blank">Resume</a></li>
           </ul>
         </div>
-        <div>
-          <h5 class="footer-title">Contact Info</h5>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="footer-heading">More</h6>
           <ul class="footer-links">
-            <li><i class="fas fa-map-marker-alt me-2" style="color:var(--primary-light);"></i> Stanford, CA</li>
-            <li><i class="fas fa-envelope me-2" style="color:var(--primary-light);"></i> ahshanhafizfuad@gmail.com</li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" target="_blank">Download CV</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h6 class="footer-heading">Get in Touch</h6>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope me-2" style="color: var(--primary-light);"></i> ahshan@example.com</li>
+            <li><i class="fas fa-map-marker-alt me-2" style="color: var(--primary-light);"></i> Dhaka, Bangladesh</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="mb-0">&copy; 2026 Alex Morgan. Crafted with <i class="fas fa-heart" style="color:var(--primary-light);"></i></p>
+        <p>&copy; 2026 Ahshan Hafiz Fuad. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });</script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2.12.0/tsparticles.engine.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="../js/main.js"></script>
-  <script src="../js/animations.js"></script>
   <script src="../js/navigation.js"></script>
+
+  <!-- Portfolio Filter Script -->
   <script>
-    // Project Filter
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        const filter = this.getAttribute('data-filter');
-        document.querySelectorAll('.project-item').forEach(item => {
-          if (filter === 'all' || item.getAttribute('data-category') === filter) {
-            item.style.display = 'block';
-            setTimeout(() => item.style.opacity = '1', 50);
-          } else {
-            item.style.opacity = '0';
-            setTimeout(() => item.style.display = 'none', 300);
-          }
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card[data-category]');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Update active state
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = '';
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              requestAnimationFrame(() => {
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              });
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              setTimeout(() => { card.style.display = 'none'; }, 300);
+            }
+          });
         });
       });
     });

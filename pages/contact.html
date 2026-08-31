@@ -3,50 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Alex Morgan</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="description" content="Get in touch with Ahshan Hafiz Fuad">
+  <title>Contact — Ahshan Hafiz Fuad</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-  <div class="preloader"><div class="preloader-spinner"></div></div>
-  <div class="scroll-progress" style="position:fixed;top:0;left:0;height:3px;background:var(--gradient-primary);z-index:10001;transition:width 0.1s;"></div>
 
-  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
     <div class="container">
-      <a class="navbar-brand-custom" href="../index.html"><span class="brand-dot"></span> Alex Morgan</a>
-      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span></span><span></span><span></span></button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <a class="navbar-brand" href="../index.html">
+        <span class="brand-icon">AH</span>
+        Ahshan<span class="gradient-text">.</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <button class="navbar-close-btn d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Close navigation">
+          <i class="fas fa-times"></i>
+        </button>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link-custom" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="achievements.html">Achievements</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="training.html">Training</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="portfolio.html">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link-custom active" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn btn-primary-custom ms-lg-3" target="_blank"><i class="fas fa-download"></i> Resume</a>
+        <a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn-primary-custom ms-lg-3" target="_blank">
+          <i class="fas fa-download"></i> CV
+        </a>
       </div>
     </div>
   </nav>
 
-  <section class="page-hero">
+  <!-- Page Header -->
+  <section class="page-header">
     <div class="container">
-      <h1 data-aos="fade-up">Get In Touch</h1>
-      <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-          <li class="breadcrumb-item active">Contact</li>
-        </ol>
-      </nav>
+      <h1 data-aos="fade-up">Get in <span class="gradient-text">Touch</span></h1>
+      <p data-aos="fade-up" data-aos-delay="100">Have a question or want to work together? Feel free to reach out.</p>
     </div>
   </section>
 
@@ -56,125 +59,69 @@
       <div class="row g-5">
         <!-- Contact Info -->
         <div class="col-lg-5" data-aos="fade-right">
-          <span class="section-label">// Contact Info</span>
-          <h2 class="mb-3">Let's Connect</h2>
-          <p class="mb-4">I'm always open to new opportunities, collaborations, and conversations. Whether you have a question or just want to say hi, feel free to reach out!</p>
+          <h3 style="margin-bottom: var(--space-lg);">Let's <span class="gradient-text">Connect</span></h3>
+          <p style="color: var(--gray-400); margin-bottom: var(--space-2xl);">
+            I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          </p>
 
-          <div class="info-card mb-3">
-            <div class="info-card-icon"><i class="fas fa-envelope"></i></div>
-            <div class="info-card-content">
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-info-content">
               <h5>Email</h5>
-              <p>ahshanhafizfuad@gmail.com</p>
-            </div>
-          </div>
-          <div class="info-card mb-3">
-            <div class="info-card-icon"><i class="fas fa-phone"></i></div>
-            <div class="info-card-content">
-              <h5>Phone</h5>
-              <p>+1 (555) 123-4567</p>
-            </div>
-          </div>
-          <div class="info-card mb-3">
-            <div class="info-card-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div class="info-card-content">
-              <h5>Location</h5>
-              <p>Stanford, California, USA</p>
-            </div>
-          </div>
-          <div class="info-card mb-4">
-            <div class="info-card-icon"><i class="fas fa-clock"></i></div>
-            <div class="info-card-content">
-              <h5>Availability</h5>
-              <p>Open to internships & freelance</p>
+              <p>ahshan@example.com</p>
             </div>
           </div>
 
-          <h5 class="mb-3">Follow Me</h5>
-          <div class="d-flex flex-column gap-2">
-            <a href="https://github.com/Fuadhafiz999" target="_blank" class="social-card">
-              <i class="fab fa-github"></i>
-              <div>
-                <strong>GitHub</strong>
-                <small class="d-block text-muted">@ahshanhafizfuad</small>
-              </div>
-            </a>
-            <a href="https://linkedin.com/in/ahshanhafizfuad" target="_blank" class="social-card">
-              <i class="fab fa-linkedin-in"></i>
-              <div>
-                <strong>LinkedIn</strong>
-                <small class="d-block text-muted">linkedin.com/in/ahshanhafizfuad</small>
-              </div>
-            </a>
-            <a href="https://www.instagram.com/ahshanhafizfuad/" target="_blank" class="social-card">
-              <i class="fab fa-instagram"></i>
-              <div>
-                <strong>Instagram</strong>
-                <small class="d-block text-muted">@ahshanhafizfuad</small>
-              </div>
-            </a>
-            <a href="https://x.com/ahshan_fuad" target="_blank" class="social-card">
-              <i class="fab fa-x-twitter"></i>
-              <div>
-                <strong>X (Twitter)</strong>
-                <small class="d-block text-muted">@ahshan_fuad</small>
-              </div>
-            </a>
-            <a href="https://scholar.google.com" target="_blank" class="social-card">
-              <i class="fas fa-graduation-cap"></i>
-              <div>
-                <strong>Google Scholar</strong>
-                <small class="d-block text-muted">Academic Profile</small>
-              </div>
-            </a>
-            <a href="https://orcid.org/0000-0002-1234-5678" target="_blank" class="social-card">
-              <i class="fab fa-orcid"></i>
-              <div>
-                <strong>ORCID</strong>
-                <small class="d-block text-muted">Research ID</small>
-              </div>
-            </a>
-            <a href="https://leetcode.com/ahshanhafizfuad" target="_blank" class="social-card">
-              <i class="fas fa-code"></i>
-              <div>
-                <strong>LeetCode</strong>
-                <small class="d-block text-muted">Problem Solving</small>
-              </div>
-            </a>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-info-content">
+              <h5>Location</h5>
+              <p>Dhaka, Bangladesh</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-info-content">
+              <h5>Availability</h5>
+              <p>Open for freelance & collaboration</p>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="mt-4">
+            <h5 style="font-size: var(--fs-sm); margin-bottom: var(--space-md);">Find me on</h5>
+            <div class="d-flex gap-3">
+              <a href="#" class="btn-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" class="btn-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="btn-icon" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" class="btn-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
           </div>
         </div>
 
         <!-- Contact Form -->
         <div class="col-lg-7" data-aos="fade-left">
-          <div class="card-custom">
-            <h3 class="mb-4">Send a Message</h3>
-            <form class="form-custom" id="contactForm">
-              <div class="row g-3">
+          <div class="glass-card">
+            <h4 style="margin-bottom: var(--space-xl);">Send a <span class="gradient-text">Message</span></h4>
+            <form id="contactForm">
+              <div class="row g-4">
                 <div class="col-md-6">
-                  <label class="form-label">First Name</label>
-                  <input type="text" class="form-control" placeholder="John" required>
+                  <label class="form-label-custom">Full Name</label>
+                  <input type="text" class="form-control-custom" placeholder="John Doe" required>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label">Last Name</label>
-                  <input type="text" class="form-control" placeholder="Doe" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Email Address</label>
-                  <input type="email" class="form-control" placeholder="john@example.com" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Subject</label>
-                  <select class="form-select form-control" required>
-                    <option value="" disabled selected>Select a topic</option>
-                    <option>Internship Opportunity</option>
-                    <option>Research Collaboration</option>
-                    <option>Freelance Project</option>
-                    <option>Speaking Invitation</option>
-                    <option>General Inquiry</option>
-                  </select>
+                  <label class="form-label-custom">Email Address</label>
+                  <input type="email" class="form-control-custom" placeholder="john@example.com" required>
                 </div>
                 <div class="col-12">
-                  <label class="form-label">Message</label>
-                  <textarea class="form-control" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+                  <label class="form-label-custom">Subject</label>
+                  <input type="text" class="form-control-custom" placeholder="Project Inquiry" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label-custom">Message</label>
+                  <textarea class="form-control-custom" placeholder="Tell me about your project..." required></textarea>
                 </div>
                 <div class="col-12">
                   <button type="submit" class="btn-primary-custom w-100 justify-content-center">
@@ -189,98 +136,77 @@
     </div>
   </section>
 
-  <!-- Map Section -->
-  <section class="section section-bg-light">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// Location</span>
-        <h2 class="section-title">Find Me at Stanford</h2>
-      </div>
-      <div class="card-custom overflow-hidden p-0" data-aos="fade-up">
-        <div style="width:100%;height:400px;background:var(--gray-200);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;">
-          <i class="fas fa-map-marked-alt fa-3x" style="color:var(--primary);"></i>
-          <p class="mb-0" style="color:var(--gray-500);">Stanford University, Stanford, CA 94305</p>
-          <a href="https://maps.google.com/?q=Stanford+University" target="_blank" class="btn-outline-primary-custom">
-            <i class="fas fa-external-link-alt me-2"></i> Open in Google Maps
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h3><span class="brand-dot" style="width:8px;height:8px;background:var(--primary);border-radius:50%;display:inline-block;margin-right:6px;"></span> Alex Morgan</h3>
-          <p>Computer Science student at Stanford University.</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">Ahshan<span>.</span></div>
+          <p class="footer-description">Computer Science student passionate about building innovative software solutions.</p>
           <div class="footer-social">
-            <a href="https://github.com/Fuadhafiz999" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/ahshanhafizfuad" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/ahshanhafizfuad/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/ahshan_fuad" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
           </div>
         </div>
-        <div>
-          <h5 class="footer-title">Quick Links</h5>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="footer-heading">Navigation</h6>
           <ul class="footer-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="achievements.html">Achievements</a></li>
-            <li><a href="training.html">Training</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Portfolio</h5>
-          <ul class="footer-links">
             <li><a href="portfolio.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" target="_blank">Resume</a></li>
           </ul>
         </div>
-        <div>
-          <h5 class="footer-title">Contact Info</h5>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="footer-heading">More</h6>
           <ul class="footer-links">
-            <li><i class="fas fa-map-marker-alt me-2" style="color:var(--primary-light);"></i> Stanford, CA</li>
-            <li><i class="fas fa-envelope me-2" style="color:var(--primary-light);"></i> ahshanhafizfuad@gmail.com</li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" target="_blank">Download CV</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h6 class="footer-heading">Get in Touch</h6>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope me-2" style="color: var(--primary-light);"></i> ahshan@example.com</li>
+            <li><i class="fas fa-map-marker-alt me-2" style="color: var(--primary-light);"></i> Dhaka, Bangladesh</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="mb-0">&copy; 2026 Alex Morgan. Crafted with <i class="fas fa-heart" style="color:var(--primary-light);"></i></p>
+        <p>&copy; 2026 Ahshan Hafiz Fuad. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });</script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2.12.0/tsparticles.engine.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="../js/main.js"></script>
-  <script src="../js/animations.js"></script>
   <script src="../js/navigation.js"></script>
+
   <script>
-    // Contact Form Handler
+    // Contact form handler (demo)
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const btn = this.querySelector('button[type="submit"]');
       const originalText = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      btn.disabled = true;
-
+      btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+      btn.style.background = 'var(--success)';
       setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-        btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-        
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.style.background = '';
-          btn.disabled = false;
-          this.reset();
-        }, 3000);
-      }, 1500);
+        btn.innerHTML = originalText;
+        btn.style.background = '';
+        this.reset();
+      }, 3000);
     });
   </script>
 </body>

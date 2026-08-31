@@ -3,427 +3,370 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Alex Morgan — Computer Science student, full-stack developer, and ML enthusiast">
-  <title>Alex Morgan | Portfolio</title>
+  <meta name="description" content="Ahshan Hafiz Fuad — Computer Science Student, Full-Stack Developer, and Software Engineer Portfolio">
+  <meta name="keywords" content="portfolio, developer, computer science, full-stack, software engineer">
+  <meta name="author" content="Ahshan Hafiz Fuad">
+  <title>Ahshan Hafiz Fuad — Portfolio</title>
 
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Font Awesome 6 -->
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- AOS (Animate on Scroll) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="preloader-spinner"></div>
-  </div>
 
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-progress" style="position:fixed;top:0;left:0;height:3px;background:var(--gradient-primary);z-index:10001;transition:width 0.1s;"></div>
-
-  <!-- Custom Cursor (Desktop) -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-outline"></div>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
     <div class="container">
-      <a class="navbar-brand-custom" href="index.html">
-        <span class="brand-dot"></span> Alex Morgan
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-icon">AH</span>
+        Ahshan<span class="gradient-text">.</span>
       </a>
-      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span></span><span></span><span></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="mainNav">
+        <button class="navbar-close-btn d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Close navigation">
+          <i class="fas fa-times"></i>
+        </button>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link-custom active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="pages/about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="pages/achievements.html">Achievements</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="pages/training.html">Training</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="pages/portfolio.html">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="pages/contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="pages/theme.html">Theme</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/portfolio.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/achievements.html">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/training.html">Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
         </ul>
-        <a href="pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn btn-primary-custom ms-lg-3" target="_blank">
-          <i class="fas fa-download"></i> Resume
+        <a href="pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn-primary-custom ms-lg-3" target="_blank">
+          <i class="fas fa-download"></i> CV
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero-section" id="home">
-    <!-- Background Video -->
-    <video class="video-bg" autoplay muted loop playsinline poster="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920">
-      <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay"></div>
-    <div id="particles-js"></div>
-
-    <div class="container hero-content">
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="home">
+    <div id="tsparticles" class="hero-particles"></div>
+    <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
-          <p class="hero-greeting">
-            <i class="fas fa-hand-wave"></i> Hello, I'm
-          </p>
-          <h1 class="hero-name">
-            Alex <span class="highlight">Morgan</span>
-          </h1>
-          <h2 class="hero-title">
-            <span class="typed-text"></span>
-          </h2>
+        <div class="col-lg-7 hero-content" data-aos="fade-right" data-aos-delay="100">
+          <p class="hero-greeting">👋 Hello, I'm</p>
+          <h1 class="hero-name">Ahshan Hafiz<br><span class="gradient-text">Fuad</span></h1>
+          <p class="hero-tagline">I'm a <span class="hero-typed typed-text"></span></p>
           <p class="hero-description">
-            A passionate Computer Science student at Stanford University with a drive for building innovative solutions. 
-            Specializing in full-stack development, machine learning, and open-source contribution.
+            A passionate Computer Science student building innovative solutions and exploring the frontiers of technology. Turning ideas into elegant, functional software.
           </p>
-          <div class="hero-buttons d-flex gap-3 flex-wrap">
-            <a href="pages/about.html" class="btn-primary-custom btn-magnetic">
-              <i class="fas fa-user"></i> About Me
+          <div class="d-flex flex-wrap gap-3">
+            <a href="pages/portfolio.html" class="btn-primary-custom">
+              <i class="fas fa-rocket"></i> View Projects
             </a>
-            <a href="pages/portfolio.html" class="btn-outline-custom btn-magnetic">
-              <i class="fas fa-briefcase"></i> View Projects
+            <a href="pages/contact.html" class="btn-outline-custom">
+              <i class="fas fa-envelope"></i> Get in Touch
             </a>
           </div>
-          <div class="hero-social mt-4 d-flex gap-3">
-            <a href="https://github.com/Fuadhafiz999" target="_blank" class="btn btn-outline-custom btn-sm" data-bs-toggle="tooltip" title="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/ahshanhafizfuad" target="_blank" class="btn btn-outline-custom btn-sm" data-bs-toggle="tooltip" title="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.instagram.com/ahshanhafizfuad/" target="_blank" class="btn btn-outline-custom btn-sm" data-bs-toggle="tooltip" title="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://x.com/ahshan_fuad" target="_blank" class="btn btn-outline-custom btn-sm" data-bs-toggle="tooltip" title="X (Twitter)">
-              <i class="fab fa-x-twitter"></i>
-            </a>
-            <a href="mailto:ahshanhafizfuad@gmail.com" class="btn btn-outline-custom btn-sm" data-bs-toggle="tooltip" title="Email">
-              <i class="fas fa-envelope"></i>
-            </a>
+          <div class="hero-social">
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
-        <div class="col-lg-5 text-center mt-5 mt-lg-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-          <div class="hero-image-wrapper position-relative">
-            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                 alt="Alex Morgan" 
-                 class="img-fluid rounded-4 shadow-lg float-animation"
-                 style="max-height: 450px; object-fit: cover; border: 3px solid rgba(37, 99, 235, 0.3);"
-                 data-lightbox>
-            <div class="position-absolute" style="bottom: -20px; right: -10px; background: var(--gradient-primary); color: white; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600;">
-              <i class="fas fa-graduation-cap"></i> CS @ Stanford
-            </div>
+        <div class="col-lg-5 hero-image-wrapper d-none d-lg-flex" data-aos="fade-left" data-aos-delay="300">
+          <div class="hero-image-ring"></div>
+          <div class="hero-image d-flex align-items-center justify-content-center" style="background: var(--gradient-primary); color: white; font-size: 4rem; font-family: var(--font-heading); font-weight: 700;">
+            AH
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section class="section section-bg-light" id="stats">
+  <!-- ===== Stats Section ===== -->
+  <section class="stats-section">
     <div class="container">
-      <div class="row g-4 stagger-fade">
+      <div class="row">
         <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
-          <div class="stat-card glass-card">
-            <div class="stat-number counter-value" data-target="15">0</div>
-            <div class="stat-label">Projects Completed</div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="15">0</div>
+            <div class="stat-label">Projects</div>
           </div>
         </div>
         <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-          <div class="stat-card glass-card">
-            <div class="stat-number counter-value" data-target="8">0</div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="8">0</div>
             <div class="stat-label">Certifications</div>
           </div>
         </div>
         <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-          <div class="stat-card glass-card">
-            <div class="stat-number counter-value" data-target="500">0</div>
-            <div class="stat-label">GitHub Contributions</div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="3">0</div>
+            <div class="stat-label">Internships</div>
           </div>
         </div>
         <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
-          <div class="stat-card glass-card">
-            <div class="stat-number counter-value" data-target="3">0</div>
-            <div class="stat-label">Published Papers</div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="5">0</div>
+            <div class="stat-label">Awards</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Skills Section -->
+  <!-- ===== Skills Section ===== -->
   <section class="section" id="skills">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// What I Do</span>
-        <h2 class="section-title">Core Competencies</h2>
-        <p class="section-subtitle">Building the future one line of code at a time</p>
+      <div class="section-title" data-aos="fade-up">
+        <span class="label">// Expertise</span>
+        <h2>Skills & <span class="gradient-text">Technologies</span></h2>
+        <p>A curated set of technologies and tools I use to bring ideas to life.</p>
       </div>
-
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-          <div class="card-custom tilt-3d">
-            <div class="card-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <h4>Full-Stack Development</h4>
-            <p>Proficient in React, Node.js, Python, and modern web technologies. Building scalable applications from concept to deployment.</p>
-            <div class="mt-3">
-              <span class="badge-custom">React</span>
-              <span class="badge-custom">Node.js</span>
-              <span class="badge-custom">Python</span>
-            </div>
+      <div class="skills-grid">
+        <!-- Frontend -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="0" data-tilt>
+          <div class="skill-card-icon"><i class="fas fa-code"></i></div>
+          <h4>Frontend Development</h4>
+          <p>Building responsive, accessible, and performant user interfaces.</p>
+          <div class="skill-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Bootstrap</span>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-custom tilt-3d">
-            <div class="card-icon">
-              <i class="fas fa-brain"></i>
-            </div>
-            <h4>Machine Learning</h4>
-            <p>Experience with TensorFlow, PyTorch, and scikit-learn. Researching NLP and computer vision applications.</p>
-            <div class="mt-3">
-              <span class="badge-custom">TensorFlow</span>
-              <span class="badge-custom">PyTorch</span>
-              <span class="badge-custom">NLP</span>
-            </div>
+        <!-- Backend -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100" data-tilt>
+          <div class="skill-card-icon"><i class="fas fa-server"></i></div>
+          <h4>Backend Development</h4>
+          <p>Designing robust APIs and server-side logic for scalable applications.</p>
+          <div class="skill-tags">
+            <span>Node.js</span>
+            <span>Python</span>
+            <span>Express</span>
+            <span>Django</span>
+            <span>REST APIs</span>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-custom tilt-3d">
-            <div class="card-icon">
-              <i class="fas fa-database"></i>
-            </div>
-            <h4>Data Engineering</h4>
-            <p>Building robust data pipelines and working with both SQL and NoSQL databases for optimal data management.</p>
-            <div class="mt-3">
-              <span class="badge-custom">PostgreSQL</span>
-              <span class="badge-custom">MongoDB</span>
-              <span class="badge-custom">Redis</span>
-            </div>
+        <!-- Database -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200" data-tilt>
+          <div class="skill-card-icon"><i class="fas fa-database"></i></div>
+          <h4>Databases</h4>
+          <p>Managing and optimizing data storage for various application needs.</p>
+          <div class="skill-tags">
+            <span>MongoDB</span>
+            <span>PostgreSQL</span>
+            <span>MySQL</span>
+            <span>Redis</span>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-custom tilt-3d">
-            <div class="card-icon">
-              <i class="fas fa-cloud"></i>
-            </div>
-            <h4>Cloud & DevOps</h4>
-            <p>Hands-on experience with AWS, Docker, Kubernetes, and CI/CD pipelines for modern deployment workflows.</p>
-            <div class="mt-3">
-              <span class="badge-custom">AWS</span>
-              <span class="badge-custom">Docker</span>
-              <span class="badge-custom">K8s</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-          <div class="card-custom tilt-3d">
-            <div class="card-icon">
-              <i class="fas fa-mobile-alt"></i>
-            </div>
-            <h4>Mobile Development</h4>
-            <p>Cross-platform mobile app development using React Native and Flutter for iOS and Android platforms.</p>
-            <div class="mt-3">
-              <span class="badge-custom">React Native</span>
-              <span class="badge-custom">Flutter</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-          <div class="card-custom tilt-3d">
-            <div class="card-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <h4>Cybersecurity</h4>
-            <p>Understanding of secure coding practices, penetration testing, and vulnerability assessment methodologies.</p>
-            <div class="mt-3">
-              <span class="badge-custom">OWASP</span>
-              <span class="badge-custom">Pen Testing</span>
-            </div>
+        <!-- Tools -->
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="300" data-tilt>
+          <div class="skill-card-icon"><i class="fas fa-tools"></i></div>
+          <h4>DevOps & Tools</h4>
+          <p>Streamlining development workflows and deployment pipelines.</p>
+          <div class="skill-tags">
+            <span>Git</span>
+            <span>Docker</span>
+            <span>Linux</span>
+            <span>CI/CD</span>
+            <span>AWS</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Projects Preview -->
-  <section class="section section-bg-light" id="projects-preview">
+  <!-- ===== Featured Projects ===== -->
+  <section class="section section-dark" id="projects">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// Featured Work</span>
-        <h2 class="section-title">Recent Projects</h2>
-        <p class="section-subtitle">A selection of my latest academic and personal projects</p>
+      <div class="section-title" data-aos="fade-up">
+        <span class="label">// Portfolio</span>
+        <h2>Featured <span class="gradient-text">Projects</span></h2>
+        <p>A selection of projects I've built, from full-stack apps to open-source contributions.</p>
       </div>
-
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-          <div class="project-card">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800" alt="AI Dashboard">
-              <div class="project-card-overlay">
-                <a href="#" data-bs-toggle="tooltip" title="View"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#" data-bs-toggle="tooltip" title="GitHub"><i class="fab fa-github"></i></a>
-              </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="0" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/35560482/pexels-photo-35560482.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2">
+              <span class="badge-custom badge-primary">React</span>
+              <span class="badge-custom badge-accent">Node.js</span>
             </div>
-            <div class="project-card-body">
-              <h5>AI Analytics Dashboard</h5>
-              <p>Real-time ML-powered analytics dashboard with predictive insights.</p>
-              <div class="project-tags">
-                <span class="badge">Python</span>
-                <span class="badge">TensorFlow</span>
-                <span class="badge">React</span>
-              </div>
+            <h4>E-Commerce Platform</h4>
+            <p>A full-stack e-commerce solution with user authentication, payment integration, and admin dashboard.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-card">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800" alt="E-Commerce Platform">
-              <div class="project-card-overlay">
-                <a href="#" data-bs-toggle="tooltip" title="View"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#" data-bs-toggle="tooltip" title="GitHub"><i class="fab fa-github"></i></a>
-              </div>
+        <!-- Project 2 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/17483868/pexels-photo-17483868.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2">
+              <span class="badge-custom badge-primary">Python</span>
+              <span class="badge-custom badge-success">ML</span>
             </div>
-            <div class="project-card-body">
-              <h5>E-Commerce Platform</h5>
-              <p>Full-stack e-commerce solution with payment integration and admin panel.</p>
-              <div class="project-tags">
-                <span class="badge">Node.js</span>
-                <span class="badge">MongoDB</span>
-                <span class="badge">Stripe</span>
-              </div>
+            <h4>AI Chat Assistant</h4>
+            <p>An intelligent chatbot powered by NLP with context-aware responses and sentiment analysis.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-card">
-            <div class="project-card-img">
-              <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Climate Data Visualizer">
-              <div class="project-card-overlay">
-                <a href="#" data-bs-toggle="tooltip" title="View"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#" data-bs-toggle="tooltip" title="GitHub"><i class="fab fa-github"></i></a>
-              </div>
+        <!-- Project 3 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-tilt>
+          <div class="project-card-image" style="background-image: url('https://images.pexels.com/photos/6804093/pexels-photo-6804093.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=1');">
+          </div>
+          <div class="project-card-body">
+            <div class="d-flex gap-2 mb-2">
+              <span class="badge-custom badge-primary">Django</span>
+              <span class="badge-custom badge-warning">PostgreSQL</span>
             </div>
-            <div class="project-card-body">
-              <h5>Climate Data Visualizer</h5>
-              <p>Interactive climate data visualization tool using D3.js and public APIs.</p>
-              <div class="project-tags">
-                <span class="badge">D3.js</span>
-                <span class="badge">API</span>
-                <span class="badge">Vue.js</span>
-              </div>
+            <h4>Task Management App</h4>
+            <p>A collaborative project management tool with real-time updates and team features.</p>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
         </div>
       </div>
-
       <div class="text-center mt-5" data-aos="fade-up">
-        <a href="pages/portfolio.html" class="btn-primary-custom">
-          View All Projects <i class="fas fa-arrow-right"></i>
+        <a href="pages/portfolio.html" class="btn-outline-custom">
+          <i class="fas fa-arrow-right"></i> View All Projects
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Testimonial / Quote Section -->
-  <section class="section parallax-section" style="background-image: url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920');">
-    <div class="hero-overlay" style="opacity: 0.65;"></div>
-    <div class="container position-relative" style="z-index: 2;">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center" data-aos="zoom-in">
-          <i class="fas fa-quote-left fa-3x text-primary mb-4" style="opacity: 0.3; color: var(--primary-light);"></i>
-          <h3 class="text-white mb-4" style="font-size: 1.75rem; font-weight: 300; line-height: 1.8;">
-            "The best way to predict the future is to create it. Every project is an opportunity to learn, grow, and make a meaningful impact."
-          </h3>
-          <p class="text-white-50 mb-0">— Alex Morgan</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="section" id="cta">
+  <!-- ===== Testimonials ===== -->
+  <section class="section" id="testimonials">
     <div class="container">
-      <div class="glass-card text-center" data-aos="fade-up" style="background: var(--gradient-hero); border: 1px solid rgba(37,99,235,0.3);padding:2rem;">
-
-        <h2 class="text-white mb-3">Let's Build Something Amazing Together</h2>
-        <p class="text-white-50 mb-4 mx-auto" style="max-width: 500px;">
-          Open to internships, research collaborations, and exciting project opportunities.
-        </p>
-        <div class="d-flex gap-3 justify-content-center flex-wrap">
-          <a href="pages/contact.html" class="btn-primary-custom">
-            <i class="fas fa-paper-plane"></i> Get In Touch
-          </a>
-          <a href="pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn-outline-custom" target="_blank">
-            <i class="fas fa-file-pdf"></i> Download Resume
-          </a>
-        </div>
+      <div class="section-title" data-aos="fade-up">
+        <span class="label">// Testimonials</span>
+        <h2>What People <span class="gradient-text">Say</span></h2>
+        <p>Feedback from professors, mentors, and collaborators.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h3><span class="brand-dot" style="width:8px;height:8px;background:var(--primary);border-radius:50%;display:inline-block;margin-right:6px;"></span> Alex Morgan</h3>
-          <p>Computer Science student at Stanford University. Passionate about building technology that makes a difference.</p>
-          <div class="footer-social">
-            <a href="https://github.com/Fuadhafiz999" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/ahshanhafizfuad" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/ahshanhafizfuad/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/ahshan_fuad" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="mailto:ahshanhafizfuad@gmail.com"><i class="fas fa-envelope"></i></a>
+      <div class="testimonials-track" data-aos="fade-up" data-aos-delay="100">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>"Ahshan is one of the most dedicated students I've taught. His technical skills and problem-solving abilities are exceptional."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DR</div>
+            <div class="testimonial-author-info">
+              <h5>Dr. Rahman</h5>
+              <span>Professor, Computer Science</span>
+            </div>
           </div>
         </div>
-        <div>
-          <h5 class="footer-title">Quick Links</h5>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>"Working with Ahshan on the capstone project was a great experience. He brings both technical depth and creative thinking."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SK</div>
+            <div class="testimonial-author-info">
+              <h5>Sarah Khan</h5>
+              <span>Team Lead, Tech Corp</span>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>"His internship contributions were outstanding. Ahshan quickly became a valued team member with his proactive approach."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MI</div>
+            <div class="testimonial-author-info">
+              <h5>Md. Ibrahim</h5>
+              <span>Engineering Manager</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA Section ===== -->
+  <section class="cta-section" id="cta">
+    <div class="container" data-aos="zoom-in">
+      <span class="label badge-custom badge-accent mb-4">Let's Connect</span>
+      <h2>Ready to <span class="gradient-text">Collaborate</span>?</h2>
+      <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="pages/contact.html" class="btn-primary-custom">
+          <i class="fas fa-paper-plane"></i> Send a Message
+        </a>
+        <a href="pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn-outline-custom" target="_blank">
+          <i class="fas fa-file-pdf"></i> Download CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">Ahshan<span>.</span></div>
+          <p class="footer-description">
+            Computer Science student passionate about building innovative software solutions and contributing to the tech community.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="footer-heading">Navigation</h6>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="pages/about.html">About</a></li>
-            <li><a href="pages/achievements.html">Achievements</a></li>
-            <li><a href="pages/training.html">Training</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Portfolio</h5>
-          <ul class="footer-links">
             <li><a href="pages/portfolio.html">Projects</a></li>
             <li><a href="pages/contact.html">Contact</a></li>
-            <li><a href="pdf/Ahshan Hafiz Fuad - CV.pdf" target="_blank">Resume</a></li>
-            <li><a href="https://scholar.google.com" target="_blank">Publications</a></li>
           </ul>
         </div>
-        <div>
-          <h5 class="footer-title">Contact Info</h5>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="footer-heading">More</h6>
           <ul class="footer-links">
-            <li><i class="fas fa-map-marker-alt me-2" style="color:var(--primary-light);"></i> Stanford, CA</li>
-            <li><i class="fas fa-envelope me-2" style="color:var(--primary-light);"></i> ahshanhafizfuad@gmail.com</li>
-            <li><i class="fas fa-phone me-2" style="color:var(--primary-light);"></i> +1 (555) 123-4567</li>
+            <li><a href="pages/achievements.html">Achievements</a></li>
+            <li><a href="pages/training.html">Training</a></li>
+            <li><a href="pages/theme.html">Theme</a></li>
+            <li><a href="pdf/Ahshan Hafiz Fuad - CV.pdf" target="_blank">Download CV</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h6 class="footer-heading">Get in Touch</h6>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope me-2" style="color: var(--primary-light);"></i> ahshan@example.com</li>
+            <li><i class="fas fa-map-marker-alt me-2" style="color: var(--primary-light);"></i> Dhaka, Bangladesh</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="mb-0">&copy; 2026 Alex Morgan. Crafted with <i class="fas fa-heart" style="color:var(--primary-light);"></i> using HTML, CSS & JS</p>
+        <p>&copy; 2026 Ahshan Hafiz Fuad. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -434,15 +377,12 @@
   </button>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
-  <script>
-    AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
-  </script>
-  <script src="js/particles-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2.12.0/tsparticles.engine.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/animations.js"></script>
   <script src="js/navigation.js"></script>
 </body>
 </html>

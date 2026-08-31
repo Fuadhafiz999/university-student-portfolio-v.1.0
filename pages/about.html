@@ -3,111 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me | Alex Morgan</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="description" content="About Ahshan Hafiz Fuad — Education, skills, and background">
+  <title>About — Ahshan Hafiz Fuad</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-  <div class="preloader"><div class="preloader-spinner"></div></div>
-  <div class="scroll-progress" style="position:fixed;top:0;left:0;height:3px;background:var(--gradient-primary);z-index:10001;transition:width 0.1s;"></div>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
     <div class="container">
-      <a class="navbar-brand-custom" href="../index.html"><span class="brand-dot"></span> Alex Morgan</a>
-      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span></span><span></span><span></span></button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <a class="navbar-brand" href="../index.html">
+        <span class="brand-icon">AH</span>
+        Ahshan<span class="gradient-text">.</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <button class="navbar-close-btn d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Close navigation">
+          <i class="fas fa-times"></i>
+        </button>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link-custom" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link-custom active" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="achievements.html">Achievements</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="training.html">Training</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="portfolio.html">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link-custom" href="theme.html">Theme</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn btn-primary-custom ms-lg-3" target="_blank"><i class="fas fa-download"></i> Resume</a>
+        <a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" class="btn-primary-custom ms-lg-3" target="_blank">
+          <i class="fas fa-download"></i> CV
+        </a>
       </div>
     </div>
   </nav>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
+  <!-- Page Header -->
+  <section class="page-header">
     <div class="container">
-      <h1 data-aos="fade-up">About Me</h1>
-      <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-          <li class="breadcrumb-item active">About</li>
-        </ol>
-      </nav>
+      <h1 data-aos="fade-up">About <span class="gradient-text">Me</span></h1>
+      <p data-aos="fade-up" data-aos-delay="100">Discover my journey, education, and the skills that drive my passion for technology.</p>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- Bio Section -->
   <section class="section">
     <div class="container">
       <div class="row align-items-center g-5">
-        <div class="col-lg-5" data-aos="fade-right">
-          <div class="position-relative">
-            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                 alt="Alex Morgan" class="img-fluid rounded-4 shadow-lg">
-            <div class="position-absolute" style="bottom:-15px;right:-15px;background:var(--gradient-primary);color:white;padding:1rem 1.5rem;border-radius:12px;font-weight:600;font-family:var(--font-heading);">
-              <i class="fas fa-graduation-cap me-2"></i> CGPA: 3.92/4.0
-            </div>
+        <div class="col-lg-6" data-aos="fade-right">
+          <div style="width: 100%; max-width: 400px; aspect-ratio: 1; border-radius: var(--radius-2xl); background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; font-size: 5rem; color: white; font-family: var(--font-heading); font-weight: 700; margin: 0 auto;">
+            AH
           </div>
         </div>
-        <div class="col-lg-7" data-aos="fade-left">
-          <span class="section-label">// About Me</span>
-          <h2 class="mb-3">Computer Science Student @ Stanford</h2>
-          <p class="lead mb-4">I'm a third-year Computer Science student with a passion for turning complex problems into elegant, user-friendly solutions.</p>
-          <p>My journey in technology started when I built my first website at age 14. Since then, I've immersed myself in the world of software development, artificial research, and open-source contribution. I believe in the power of technology to solve real-world problems and make education accessible to everyone.</p>
-          <p>Currently, I'm researching Natural Language Processing under Dr. Sarah Chen at the Stanford AI Lab, where we're working on improving multilingual text understanding. I also serve as the Vice President of the Stanford Coding Club and lead a team of 20+ developers.</p>
-          <div class="row mt-4 g-3">
-            <div class="col-sm-6">
-              <div class="info-card">
-                <div class="info-card-icon"><i class="fas fa-graduation-cap"></i></div>
-                <div class="info-card-content">
-                  <h5>Education</h5>
-                  <p>B.S. Computer Science</p>
-                </div>
-              </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <span class="label badge-custom badge-accent mb-3">Who I Am</span>
+          <h2>Ahshan Hafiz Fuad</h2>
+          <p class="lead" style="color: var(--gray-300);">
+            I'm a dedicated Computer Science student with a passion for creating innovative solutions through code. My journey in tech started with curiosity and has evolved into a deep commitment to software engineering.
+          </p>
+          <p>
+            Throughout my academic career, I've developed a strong foundation in both frontend and backend technologies. I enjoy tackling complex problems and turning them into elegant, user-friendly applications.
+          </p>
+          <p>
+            When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, and mentoring fellow students. I believe in continuous learning and staying updated with the latest industry trends.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <div class="d-flex align-items-center gap-2">
+              <i class="fas fa-map-marker-alt" style="color: var(--accent);"></i>
+              <span style="color: var(--gray-300);">Dhaka, Bangladesh</span>
             </div>
-            <div class="col-sm-6">
-              <div class="info-card">
-                <div class="info-card-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <div class="info-card-content">
-                  <h5>Location</h5>
-                  <p>Stanford, California</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="info-card">
-                <div class="info-card-icon"><i class="fas fa-calendar"></i></div>
-                <div class="info-card-content">
-                  <h5>Expected Graduation</h5>
-                  <p>May 2027</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="info-card">
-                <div class="info-card-icon"><i class="fas fa-language"></i></div>
-                <div class="info-card-content">
-                  <h5>Languages</h5>
-                  <p>English, Spanish, Mandarin</p>
-                </div>
-              </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="fas fa-graduation-cap" style="color: var(--accent);"></i>
+              <span style="color: var(--gray-300);">B.Sc. in Computer Science</span>
             </div>
           </div>
         </div>
@@ -116,32 +90,36 @@
   </section>
 
   <!-- Education Timeline -->
-  <section class="section section-bg-light">
+  <section class="section section-dark">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// Education</span>
-        <h2 class="section-title">Academic Background</h2>
+      <div class="section-title" data-aos="fade-up">
+        <span class="label">// Education</span>
+        <h2>Academic <span class="gradient-text">Journey</span></h2>
+        <p>My educational background and academic milestones.</p>
       </div>
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <div class="timeline">
+          <div class="timeline" data-aos="fade-up">
             <div class="timeline-item">
-              <div class="timeline-date">2024 - Present</div>
-              <h4>Bachelor of Science in Computer Science</h4>
-              <p class="company">Stanford University — Stanford, CA</p>
-              <p>CGPA: 3.92/4.0. Dean's List every semester. Relevant coursework: Data Structures & Algorithms, Operating Systems, Machine Learning, Database Systems, Computer Networks, Software Engineering.</p>
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2022 — Present</div>
+              <h4>B.Sc. in Computer Science</h4>
+              <h5>University of Dhaka</h5>
+              <p>Currently pursuing my bachelor's degree with a focus on software engineering and artificial intelligence. Maintaining a strong GPA while actively participating in coding competitions and research projects.</p>
             </div>
             <div class="timeline-item">
-              <div class="timeline-date">2022 - 2024</div>
-              <h4>High School Diploma — Summa Cum Laude</h4>
-              <p class="company">Thomas Jefferson High School for Science & Technology — Alexandria, VA</p>
-              <p>GPA: 4.0/4.0. National Merit Scholar. AP Scholar with Distinction (8 AP exams with scores of 5). President of Computer Science Club.</p>
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2019 — 2021</div>
+              <h4>Higher Secondary Certificate (HSC)</h4>
+              <h5>Dhaka College</h5>
+              <p>Graduated with distinction in the Science group. Developed a keen interest in computer programming and mathematics during this period.</p>
             </div>
             <div class="timeline-item">
-              <div class="timeline-date">2020 - 2022</div>
-              <h4>STEM Academy Program</h4>
-              <p class="company">Online — Coursera & edX</p>
-              <p>Completed 15+ online courses in computer science fundamentals, data science, and artificial intelligence from top universities.</p>
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2017 — 2019</div>
+              <h4>Secondary School Certificate (SSC)</h4>
+              <h5>BIGB School & College</h5>
+              <p>Achieved excellent results in the Science group. Participated in science fairs and math olympiads, laying the foundation for my technical career.</p>
             </div>
           </div>
         </div>
@@ -149,92 +127,89 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <!-- Skill Bars -->
   <section class="section">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// Technical Skills</span>
-        <h2 class="section-title">My Skill Set</h2>
+      <div class="section-title" data-aos="fade-up">
+        <span class="label">// Technical Skills</span>
+        <h2>Proficiency <span class="gradient-text">Levels</span></h2>
+        <p>Self-assessed proficiency across various technologies.</p>
       </div>
       <div class="row g-4">
-        <div class="col-lg-6" data-aos="fade-right">
-          <h4 class="mb-4">Programming Languages</h4>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Python</span><span class="skill-percent">95%</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="95%"></div></div>
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="skill-bar">
+            <div class="skill-bar-header">
+              <span>JavaScript / TypeScript</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width: 90%;"></div>
+            </div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">JavaScript / TypeScript</span><span class="skill-percent">90%</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div>
+          <div class="skill-bar">
+            <div class="skill-bar-header">
+              <span>React.js / Next.js</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width: 85%;"></div>
+            </div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Java</span><span class="skill-percent">85%</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div>
+          <div class="skill-bar">
+            <div class="skill-bar-header">
+              <span>Node.js / Express</span>
+              <span>82%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width: 82%;"></div>
+            </div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">C / C++</span><span class="skill-percent">80%</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="80%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">SQL</span><span class="skill-percent">88%</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="88%"></div></div>
-          </div>
-        </div>
-        <div class="col-lg-6" data-aos="fade-left">
-          <h4 class="mb-4">Frameworks & Tools</h4>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">React / Next.js</span><span class="skill-percent">92%</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="92%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Node.js / Express</span><span class="skill-percent">88%</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="88%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">TensorFlow / PyTorch</span><span class="skill-percent">82%</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="82%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Docker / Kubernetes</span><span class="skill-percent">78%</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="78%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">AWS / GCP</span><span class="skill-percent">75%</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="75%"></div></div>
+          <div class="skill-bar">
+            <div class="skill-bar-header">
+              <span>Python / Django</span>
+              <span>78%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width: 78%;"></div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interests Section -->
-  <section class="section section-bg-dark">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">// Beyond Code</span>
-        <h2 class="section-title">Personal Interests</h2>
-        <p class="section-subtitle">What drives me outside of academics</p>
-      </div>
-      <div class="row g-4 stagger-fade">
-        <div class="col-md-4" data-aos="fade-up">
-          <div class="glass-card text-center">
-            <i class="fas fa-chess-knight fa-2x mb-3" style="color:var(--primary-light);"></i>
-            <h5 class="text-white">Chess</h5>
-            <p class="mb-0">Rated 1850 ELO. Member of Stanford Chess Club.</p>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-bar">
+            <div class="skill-bar-header">
+              <span>HTML5 / CSS3 / Bootstrap</span>
+              <span>92%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width: 92%;"></div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="glass-card text-center">
-            <i class="fas fa-camera fa-2x mb-3" style="color:var(--primary-light);"></i>
-            <h5 class="text-white">Photography</h5>
-            <p class="mb-0">Landscape and street photography enthusiast.</p>
+          <div class="skill-bar">
+            <div class="skill-bar-header">
+              <span>MongoDB / PostgreSQL</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width: 75%;"></div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="glass-card text-center">
-            <i class="fas fa-hiking fa-2x mb-3" style="color:var(--primary-light);"></i>
-            <h5 class="text-white">Hiking</h5>
-            <p class="mb-0">Completed 20+ trails in California's national parks.</p>
+          <div class="skill-bar">
+            <div class="skill-bar-header">
+              <span>Git / GitHub / CI/CD</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width: 88%;"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-header">
+              <span>Docker / Linux</span>
+              <span>70%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="width: 70%;"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -244,56 +219,59 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h3><span class="brand-dot" style="width:8px;height:8px;background:var(--primary);border-radius:50%;display:inline-block;margin-right:6px;"></span> Alex Morgan</h3>
-          <p>Computer Science student at Stanford University.</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">Ahshan<span>.</span></div>
+          <p class="footer-description">Computer Science student passionate about building innovative software solutions.</p>
           <div class="footer-social">
-            <a href="https://github.com/Fuadhafiz999" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/ahshanhafizfuad" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/ahshanhafizfuad/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/ahshan_fuad" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="mailto:ahshanhafizfuad@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
           </div>
         </div>
-        <div>
-          <h5 class="footer-title">Quick Links</h5>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="footer-heading">Navigation</h6>
           <ul class="footer-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="achievements.html">Achievements</a></li>
-            <li><a href="training.html">Training</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Portfolio</h5>
-          <ul class="footer-links">
             <li><a href="portfolio.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" target="_blank">Resume</a></li>
           </ul>
         </div>
-        <div>
-          <h5 class="footer-title">Contact Info</h5>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="footer-heading">More</h6>
           <ul class="footer-links">
-            <li><i class="fas fa-map-marker-alt me-2" style="color:var(--primary-light);"></i> Stanford, CA</li>
-            <li><i class="fas fa-envelope me-2" style="color:var(--primary-light);"></i> ahshanhafizfuad@gmail.com</li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="../pdf/Ahshan Hafiz Fuad - CV.pdf" target="_blank">Download CV</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h6 class="footer-heading">Get in Touch</h6>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope me-2" style="color: var(--primary-light);"></i> ahshan@example.com</li>
+            <li><i class="fas fa-map-marker-alt me-2" style="color: var(--primary-light);"></i> Dhaka, Bangladesh</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="mb-0">&copy; 2026 Alex Morgan. Crafted with <i class="fas fa-heart" style="color:var(--primary-light);"></i></p>
+        <p>&copy; 2026 Ahshan Hafiz Fuad. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });</script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2.12.0/tsparticles.engine.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="../js/main.js"></script>
-  <script src="../js/animations.js"></script>
   <script src="../js/navigation.js"></script>
 </body>
 </html>
