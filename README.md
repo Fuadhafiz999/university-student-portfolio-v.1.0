@@ -17,7 +17,7 @@
 
 <br>
 
-**🌐 [Live Demo](https://ahshanhafizfuad.netlify.app)** • **📄 [Download CV](pdf/Ahshan%20Hafiz%20Fuad%20-%20CV.pdf)**
+**🌐 [Live Demo]([https://ahshanhafizfuad.netlify.app](https://university-student-portfolio-v-1-0.vercel.app/)** • **📄 [Download CV](pdf/Ahshan%20Hafiz%20Fuad%20-%20CV.pdf)**
 
 ---
 
