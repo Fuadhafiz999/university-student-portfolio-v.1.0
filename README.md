@@ -324,7 +324,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 <tr>
 <td align="center">
 <a href="https://github.com/Fuadhafiz999">
-<img src="https://ahshanhafizfuad.netlify.app/images/Fuad-formal.png" width="100" style="border-radius:50%;" alt="Ahshan Hafiz Fuad"/>
+<img src="https://ahshanhafizfuad.netlify.app/images/Fuad-formal.png" width="100" style="border-radius: 50% ;" alt="Ahshan Hafiz Fuad"/>
 </a>
 <br>
 <b>Ahshan Hafiz Fuad</b>
@@ -339,9 +339,9 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ### 🌐 Connect with Me
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Fuadhafiz999)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](#)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](#)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](#)
+[![LinkedIn](https://www.linkedin.com/in/ahshanhafizfuad/)](#)
+[![Twitter](https://x.com/ahshan_fuad)](#)
+[![Email](ahshanhafizfuad@gmail.com)](#)
 
 ---
 
