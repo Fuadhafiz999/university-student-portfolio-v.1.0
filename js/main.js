@@ -50,7 +50,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Back to Top Button
+  // 4. Stats Counter Animation
+  const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+  if (statNumbers.length) {
+    const animateCounter = (el) => {
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      const duration = 1800;
+      const start = performance.now();
+
+      const step = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // ease-out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target);
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target;
+        }
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    statNumbers.forEach((el) => statsObserver.observe(el));
+  }
+
+  // 5. Back to Top Button
   const backToTop = document.querySelector('.back-to-top');
   if (backToTop) {
     window.addEventListener('scroll', () => {
@@ -66,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Vanilla-Tilt Init
+  // 6. Vanilla-Tilt Init
   if (typeof VanillaTilt !== 'undefined') {
     const tiltElements = document.querySelectorAll('[data-tilt]');
     if (tiltElements.length) {
